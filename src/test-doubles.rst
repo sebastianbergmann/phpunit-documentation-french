@@ -391,7 +391,7 @@ qui est utilisé pour vérifier les sorties indirectes du système quand il est 
 Typiquement, le mock inclut également la fonctionnalité d'un bouchon de test,
 en ce sens qu'il doit retourner les valeurs du système testé s'il n'a pas déjà fait échouer
 les tests mais l'accent est mis sur la vérification des sorties indirectes.
-Ainsi, un mock est un beaucoup plus qu'un simple bouchon avec des assertions;
+Ainsi, un mock est beaucoup plus qu'un simple bouchon avec des assertions;
 il est utilisé d'une manière fondamentalement différente" (Gerard Meszaros).
 
 .. admonition:: Limitation: Vérification automatique des attentes
@@ -897,7 +897,7 @@ Quand votre application interagit avec un web service, vous voulez le
 tester sans vraiment interagir avec le web service. Pour rendre facile
 la création de bouchon ou de simulacre de web services, ``getMockFromWsdl()``
 peut être utilisée de la même façon que ``getMock()`` (voir plus haut). La seule
-différence est que ``getMockFromWsdl()`` retourne un stub ou un basé
+différence est que ``getMockFromWsdl()`` retourne un stub ou un simulacre
 basé sur la description en WSDL d'un web service tandis que ``getMock()``
 retourne un bouchon ou un simulacre basé sur une classe ou une interface PHP.
 
