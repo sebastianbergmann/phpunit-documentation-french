@@ -186,8 +186,8 @@ montre une implémentation simple de l'interface
 :numref:`extending-phpunit.examples.BaseTestListener.php`
 montre comment étendre la classe abstraite
 ``PHPUnit_Framework_BaseTestListener``, qui permet de spécifier uniquement les méthodes d'interface
-qui sont intéressantes pour votre cas d'utilisation, tout en fournissant des implémentations vides p
-our tous les autres.
+qui sont intéressantes pour votre cas d'utilisation, tout en fournissant des implémentations vides pour 
+tous les autres.
 
 .. code-block:: php
     :caption: Utiliser BaseTestListener
