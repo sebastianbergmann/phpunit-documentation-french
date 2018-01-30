@@ -80,7 +80,7 @@ cachées sont la mort de la coopération. Avec les tests, vous documentez exacte
 ce que vous attendez du paquet fourni. Le fournisseur saura que le paquet
 est prêt quand tous les tests fonctionneront.
 
-En utilisant des bouchons (voir le chapitre relatif aux "objets simulacres",
+En utilisant des bouchons (voir le chapitre relatif aux "objets mock",
 précédemment dans ce livre), vous pouvez créer un découplage plus grand entre vous
 et le fournisseur: le travail du fournisseur est de faire fonctionner les tests
 avec l'implémentation réelle du paquet. Votre travail est de faire que les tests fonctionnent

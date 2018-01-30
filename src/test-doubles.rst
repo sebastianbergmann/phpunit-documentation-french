@@ -48,7 +48,7 @@ retourner une valeur donnée quand elles sont appelées.
 .. admonition:: Limitations: méthodes final, private et static
 
    Merci de noter que les méthodes ``final``, ``private``
-   et ``static`` ne peuvent pas être remplacées par un bouchon (stub) ou un simulacre (mock).
+   et ``static`` ne peuvent pas être remplacées par un bouchon (stub) ou un mock.
    Elles seront ignorées par la fonction de doublure de test de PHPUnit et conserveront
    leur comportement initial.
 
@@ -477,15 +477,15 @@ qui sont une partie du système testé (SUT).
     ?>
 
 :numref:`test-doubles.mock-objects.examples.SubjectTest.php`
-illustre comment utiliser un simulacre pour tester l'interaction entre
+illustre comment utiliser un mock pour tester l'interaction entre
 les objets ``Subject`` et ``Observer``.
 
 Nous utilisons d'abord la méthode ``getMockBuilder()`` qui est fournie par
-la classe ``PHPUnit\Framework\TestCase`` pour configurer un simulacre
+la classe ``PHPUnit\Framework\TestCase`` pour configurer un mock
 pour ``Observer``. Puisque nous donnons un tableau comme second
 paramètre (facultatif) pour la méthode ``getMock()``,
 seule la méthode ``update()`` de la classe ``Observer`` est
-remplacée par une implémentation d'un simulacre.
+remplacée par une implémentation d'un mock.
 
 Comme ce qui nous intéresse est de vérifier qu'une méthode soit appelée,
 et avec quels arguments, nous introduisons les méthodes ``expects()``
@@ -502,7 +502,7 @@ et ``with()`` pour spécifier comment cette interaction doit se présenter.
     {
         public function testObserversAreUpdated()
         {
-            // Créer un simulacre pour la classe Observer,
+            // Créer un mock pour la classe Observer,
             // ne touchant que la méthode update().
             $observer = $this->getMockBuilder(Observer::class)
                              ->setMethods(['update'])
@@ -890,16 +890,16 @@ abstraite.
 
 .. _test-doubles.stubbing-and-mocking-web-services:
 
-Bouchon et simulacre pour Web Services
+Bouchon et mock pour Web Services
 ######################################
 
 Quand votre application interagit avec un web service, vous voulez le
 tester sans vraiment interagir avec le web service. Pour rendre facile
-la création de bouchon ou de simulacre de web services, ``getMockFromWsdl()``
+la création de bouchon ou de mock de web services, ``getMockFromWsdl()``
 peut être utilisée de la même façon que ``getMock()`` (voir plus haut). La seule
-différence est que ``getMockFromWsdl()`` retourne un stub ou un simulacre
+différence est que ``getMockFromWsdl()`` retourne un bouchon ou un mock
 basé sur la description en WSDL d'un web service tandis que ``getMock()``
-retourne un bouchon ou un simulacre basé sur une classe ou une interface PHP.
+retourne un bouchon ou un mock basé sur une classe ou une interface PHP.
 
 :numref:`test-doubles.stubbing-and-mocking-web-services.examples.GoogleTest.php`
 montre comment ``getMockFromWsdl()`` peut être utilisé pour faire un bouchon,

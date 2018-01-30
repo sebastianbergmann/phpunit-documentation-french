@@ -115,7 +115,7 @@ L'effort d'implémentation des méthodes ``assertTrue()`` et
 ``assertThat()`` prend automatiquement soin d'évaluer l'assertion et
 les tâches de suivi comme le décompte à des fins de statistique.
 Plus encore, la méthode ``isTrue()`` peut être utilisée comme un matcher
-lors de la configuration d'objets simulacres.
+lors de la configuration d'objets mock.
 
 .. _extending-phpunit.PHPUnit_Framework_TestListener:
 
@@ -186,7 +186,7 @@ montre une implémentation simple de l'interface
 :numref:`extending-phpunit.examples.BaseTestListener.php`
 montre comment étendre la classe abstraite
 ``PHPUnit_Framework_BaseTestListener``, qui permet de spécifier uniquement les méthodes d'interface
-qui sont intéressantes pour votre cas d'utilisation, tout en fournissant des implémentations vides pour 
+qui sont intéressantes pour votre cas d'utilisation, tout en fournissant des implémentations vides pour
 tous les autres.
 
 .. code-block:: php
