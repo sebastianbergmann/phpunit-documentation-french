@@ -210,9 +210,13 @@ l'annotation ``@requires`` pour exprimer les préconditions communes pour un cas
       - @requires PHPUnit 3.6.3
       - @requires PHPUnit 4.6
     * - ``OS``
-      - Une expression regulière qui match `PHP_OS <http://php.net/manual/en/reserved.constants.php#constant.php-os>`_
+      - Une expression regulière qui match `PHP_OS <http://php.net/manual/fr/reserved.constants.php#constant.php-os>`_
       - @requires OS Linux
       - @requires OS WIN32|WINNT
+    * - ``OSFAMILY``
+      - N'importe quel `Système d'exploitation <http://php.net/manual/fr/reserved.constants.php#constant.php-os-family>`_
+      - @requires OSFAMILY Solaris
+      - @requires OSFAMILY Windows
     * - ``function``
       - Tout paramètre valide pour `function_exists <http://php.net/function_exists>`_
       - @requires function imap_open

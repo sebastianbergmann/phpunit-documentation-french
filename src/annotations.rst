@@ -380,6 +380,13 @@ dépendances entre méthodes de test.
 Voir :ref:`writing-tests-for-phpunit.test-dependencies` pour plus de
 détails.
 
+.. _appendixes.annotations.doesNotPerformAssertions:
+
+@doesNotPerformAssertions
+#########################
+
+Spécifie que le test n'effectue aucune assertion, il ne sera donc pas marqué comme risqué.
+
 .. _appendixes.annotations.expectedException:
 
 @expectedException
@@ -551,6 +558,9 @@ l'annotation ``@group`` comme ceci
         {
         }
     }
+
+L'annotation ``@group`` peut également être mise sur la classe
+de test. Elle est ensuite "héritée" par toutes les méthodes de test de cette classe de test.
 
 Des tests peuvent être sélectionnés pour l'exécution en se basant sur les groupes
 en utilisant les options ``--group`` et ``--exclude-group``
@@ -726,7 +736,55 @@ dans le bloc de documentation d'une méthode pour la marquer comme méthode de t
 @testdox
 ########
 
+Spécifie une description alternative utilisée lors de la génération des phrases de la
+documentation agile (voir :ref:`other-uses-for-tests.agile-documentation`).
+L'annotation ``@testdox`` peut être appliqué aux classes de tests et aux méthodes.
+
 .. code-block:: php
+
+    /**
+     * @testdox A bank account
+     */
+    class BankAccountTest extends TestCase
+    {
+        /**
+         * @testdox has an initial balance of zero
+         */
+        public function balanceIsInitiallyZero()
+        {
+            $this->assertEquals(0, $this->ba->getBalance());
+        }
+    }
+
+.. admonition:: Note
+
+    Avant PHPUnit 7.0 (en raison d'un bug dans l'analyse des annotations), utiliser
+    l'annotation ``@testdox`` active aussi le comportement
+    de l'annotation ``@test``.
+
+.. code-block:: php
+
+.. _appendixes.annotations.testWith:
+
+@testWith
+#########
+
+Au lieu d'implémenter une méthode à utiliser avec ``@dataProvider``,
+vous pouvez définir un jeu de données en utilisant l'annotation ``@testWith``.
+
+.. code-block:: php
+
+    /**
+     * @param string    $input
+     * @param int       $expectedLength
+     *
+     * @testWith        ["test", 4]
+     *                  ["longer-string", 13]
+     */
+    public function testStringLength(string $input, int $expectedLength)
+    {
+        $this->assertEquals($expectedLength, strlen($input));
+    }
 
 .. _appendixes.annotations.ticket:
 

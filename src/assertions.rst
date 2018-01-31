@@ -160,8 +160,8 @@ Signale une erreur identifiée par ``$message`` si ``$array`` ne contient pas le
 
 .. code-block:: bash
 
-    $ phpunit ArrayHasKeyTest
-    PHPUnit 4.4.0 by Sebastian Bergmann.
+    $ phpunit ArraySubsetTest
+    PHPUnit 6.5.0 by Sebastian Bergmann.
 
     F
 
@@ -888,7 +888,7 @@ Des comparaisons plus spécialisées sont utilisés pour des types d'arguments s
 
 ``assertEquals(float $expected, float $actual[, string $message = '', float $delta = 0])``
 
-Signale une erreur identifiée par ``$message`` si l'écart entre les deux nombres réels ``$expected`` et ``$actual`` est inférieur à ``$delta``.
+Signale une erreur identifiée par ``$message`` si l'écart absolu entre les deux nombres réels ``$expected`` et ``$actual`` est plus grand que ``$delta``. Si la difference absolue entre les deux nombre flotant ``$expected`` et ``$actual`` est inférieur *ou égal  à* ``$delta``, l'assertion passera.
 
 Lisez "`What Every Computer Scientist Should Know About Floating-Point Arithmetic <http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html>`_" pour comprendre pourquoi ``$delta`` est nécessaire.
 
