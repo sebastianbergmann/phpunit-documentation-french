@@ -601,6 +601,12 @@ En complément à la méthode ``expectException()`` les méthodes
 ``expectExceptionMessageRegExp()`` existent pour établir
 des attentes pour les exceptions levées par le code testé.
 
+.. admonition:: Note
+
+   Notez que expectExceptionMessage affirme que message ``$actual``
+   contient le message ``$expected`` et n'effectue pas
+   une comparaison exacte de chaîne.
+
 Alternativement, vous pouvez utiliser les annotations ``@expectedException``,
 ``@expectedExceptionCode``,
 ``@expectedExceptionMessage`` et

@@ -264,7 +264,7 @@ nom de la base de données) dans une couche d'abstraction très simple pour conn
 aux bases de données du type
 ``PHPUnit_Extensions_Database_DB_IDatabaseConnection``.
 
-La section “Utiliser la connexion de base de données“ explicite l'API
+La section “Utiliser l'API la connexion de base de données“ explicite l'API
 de cette interface et comment en faire le meilleur usage.
 
 .. _database.implementing-getdataset:
@@ -1251,8 +1251,8 @@ utilisée par l'assertion d'égalité d'ensemble de données.
 
 .. _database.the-connection-api:
 
-L'API de connexion
-##################
+Utiliser l'API de connexion à la base de données
+################################################
 
 Il y a trois méthodes intéressantes dans l'interface de connexion
 qui doit être retournée par la méthode

@@ -14,10 +14,10 @@ les tests.
 Tests inutiles
 ##############
 
-PHPUnit peut être strict sur les tests qui ne testent rien. Cette vérification
-peut être activée en utilisant l'option ``--report-useless-tests``
+PHPUnit est par défaut strict sur les tests qui ne testent rien. Cette vérification
+peut être désactivée en utilisant l'option ``--dont-report-useless-tests``
 de la ligne de commande ou en définissant
-``beStrictAboutTestsThatDoNotTestAnything="true"`` dans
+``beStrictAboutTestsThatDoNotTestAnything="false"`` dans
 le fichier de configuration XML de PHPUnit.
 
 Un test qui n'effectue pas d'assertion sera marqué comme risqué

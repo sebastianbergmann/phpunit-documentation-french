@@ -47,10 +47,10 @@ retourner une valeur donnée quand elles sont appelées.
 
 .. admonition:: Limitations: méthodes final, private et static
 
-   Merci de noter que les méthodes ``final``, ``private``
-   et ``static`` ne peuvent pas être remplacées par un bouchon (stub) ou un mock.
-   Elles seront ignorées par la fonction de doublure de test de PHPUnit et conserveront
-   leur comportement initial.
+   Merci de noter que les méthodes ``final``, ``private``,
+   ``protected`` et ``static`` ne peuvent pas être remplacées
+   par un bouchon (stub) ou un mock. Elles seront ignorées par la
+   fonction de doublure de test de PHPUnit et conserveront leur comportement initial.
 
 .. _test-doubles.stubs:
 
@@ -735,6 +735,10 @@ Voici une liste des méthodes fournies par le constructeur de mock:
 -
 
   ``setMethods(array $methods)`` peut être appelé sur l'objet Mock Builder pour spécifier les méthodes qui doivent être remplacées par une doublure de test configurable. Le comportement des autres méthodes n'est pas changé. Si vous appelez ``setMethods(null)``, alors aucune méthode ne sera remplacé.
+
+-
+
+  ``setMethodsExcept(array $methods)`` peut être appelé sur l'objet Mock Builder pour spécifier les méthodes qui ne seront pas remplacées par un double de test configurable lors du remplacement de toutes les autres méthodes publiques. Cela fonctionne à l'inverse de ``setMethods()``.
 
 -
 
