@@ -1,58 +1,51 @@
-## Comment construire la documentation
 
-Pour compiler la documentation en français, les pré-requis sont les suivants :
+# Documentation française de PHPUnit
+
+Ce dépôt contient la documentation française de [PHPUnit](https://phpunit.de/).  
+La documentation est accessible à l'adresse https://phpunit.readthedocs.io/fr/latest/.
+
+La documentation originale en anglais : https://github.com/sebastianbergmann/phpunit-documentation-english
+
+## Construire la documentation
+
+### Pré-requis
 
 - Python
 - [Sphinx](http://www.sphinx-doc.org/)
 - [Read the Docs Sphinx Theme](https://github.com/rtfd/sphinx_rtd_theme)
 
-Pour compiler la documentation :
+### Générer la documentation HTML
 
     make html
 
-Attention, la documentation est en cours de traduction (cf. tableau ci-dessous)
+### Sortie
 
+Ensuite, vous trouverez les fichiers HTML dans `build/html`.
 
-## Contributions attendues
+### Contribuer
 
- * Traduire les fichiers encore en anglais
- * Mettre à jour les fichiers existants
- * Partir à la chasse aux typos et aux fautes d'orthographes, de grammaire et de syntaxes
+Merci de prendre du temps pour aider.
+
+#### Contributions attendues
+
+ * Mettre à jour la documentation suite aux améliorations de la [documentation anglaise](https://github.com/sebastianbergmann/phpunit-documentation-english)
+ * S'il s'agit d'une mise à jour, préciser le commit de la documentation originale avec lequel la synchronisation est faite
+ * Corriger les typos, les fautes d'orthographes, de grammaire et de syntaxes
  * Détecter le franglais et les anglicismes
  * Revue de pair sur les PR
 
+#### Mode d'emploi
 
-## Plan
+ * Vérifier le guide de traduction 
+ * Faire une Pull requests documentée vers master (idéalement depuis une "feature branch").
+ * Vérifier que la compilation passe avant de faire une pull request 
+ * Laisser les exemples de code en anglais
+ * Respecter les sauts de ligne de la documentation originale afin de faciliter les recherches et les comparaisons (les numéros de lignes entre la documentation anglaise et française doivent être les mêmes)
 
-| Fichier                           | Etat      | Contributeurs     | Nb ligne revues/Total    |
-| --------------------------------- | :-------: | :---------------: | :----------------------: |
-| annotations.xml                   | OK        | @brice @gbprod    | done                     |
-| assertions.xml                    | OK        | @gbprod           | done                     |
-| bibliography.xml                  | OK        | @gbprod           | done                     |
-| book.xml                          | OK        | @gbprod           | done                     |
-| code-coverage-analysis.xml        | OK        | @brice @gbprod    | done                     |
-| configuration.xml                 | OK        | @gbprod           | done                     |
-| copyright.xml                     | OK        | @gbprod           | done                     |
-| database.xml                      | OK        | @gbprod           | done                     |
-| extending-phpunit.xml             | OK        | @gbprod           | done                     |
-| fixtures.xml                      | OK        | @gbprod           | done                     |
-| incomplete-and-skipped-tests.xml  | OK        | @gbprod           | done                     |
-| index.xml                         | OK        | @gbprod           | done                     |
-| installation.xml                  | OK        | @brice @methylbro @gbprod | done             |
-| logging.xml                       | OK        | @gbprod           | done                     |
-| organizing-tests.xml              | OK        | @gbprod           | done                     |
-| other-uses-for-tests.xml          | OK        | @gbprod           | done                     |
-| risky-tests.xml                   | OK        | @gbprod           | done                     |
-| test-doubles.xml                  | OK        | @brice @gbprod    | done                     |
-| testing-practices.xml             | OK        | @gbprod           | done                     |
-| textui.xml                        | OK        | @gbprod           | done                     |
-| writing-tests-for-phpunit.xml     | OK        | @gbprod           | done                     |
-
-## Guide de traduction
+### Guide de traduction
 
 Dans ce fichier sont recensées les règles de traductions utilisées de manière à garantir la cohérence d'ensemble.
 Sont notamment visés les termes techniques.
-
 
 | Anglais       | Français                                                                  |
 | :------------ | :------------------------------------------------------------------------ |
@@ -74,3 +67,7 @@ Sont notamment visés les termes techniques.
 | verbe ing     | traduits par l'infinitif dans les titres : testing => tester              |
 
 
+Lectures recommandées : 
+
+ - https://framacalc.org/jargon-francais 
+ - https://www.24joursdeweb.fr/2017/on-dit-numerique-et-pas-digital-bordel/ 
