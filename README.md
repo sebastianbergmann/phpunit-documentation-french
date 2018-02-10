@@ -22,11 +22,11 @@ La documentation originale en anglais : https://github.com/sebastianbergmann/php
 
 Ensuite, vous trouverez les fichiers HTML dans `build/html`.
 
-### Contribuer
+## Contribuer
 
 Merci de prendre du temps pour aider.
 
-#### Contributions attendues
+### Contributions attendues
 
  * Mettre à jour la documentation suite aux améliorations de la [documentation anglaise](https://github.com/sebastianbergmann/phpunit-documentation-english)
  * S'il s'agit d'une mise à jour, préciser le commit de la documentation originale avec lequel la synchronisation est faite
@@ -34,7 +34,7 @@ Merci de prendre du temps pour aider.
  * Détecter le franglais et les anglicismes
  * Revue de pair sur les PR
 
-#### Mode d'emploi
+### Mode d'emploi
 
  * Vérifier le guide de traduction 
  * Faire une Pull requests documentée vers master (idéalement depuis une "feature branch").
@@ -42,9 +42,9 @@ Merci de prendre du temps pour aider.
  * Laisser les exemples de code en anglais
  * Respecter les sauts de ligne de la documentation originale afin de faciliter les recherches et les comparaisons (les numéros de lignes entre la documentation anglaise et française doivent être les mêmes)
 
-### Guide de traduction
+## Guide de traduction
 
-Dans ce fichier sont recensées les règles de traductions utilisées de manière à garantir la cohérence d'ensemble.
+Dans le tableau suivant sont recensées les règles de traductions utilisées de manière à garantir la cohérence d'ensemble.
 Sont notamment visés les termes techniques.
 
 | Anglais       | Français                                                                  |
