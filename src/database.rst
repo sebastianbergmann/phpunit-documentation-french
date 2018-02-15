@@ -1100,10 +1100,12 @@ particulièrement commode en combinaison avec le DataSet de base de données pou
     }
     ?>
 
-    *NOTE* Vous ne pouvez pas utiliser en même temps le filtrage de colonne d'inclusion
-    et d'exclusion sur la même table, seulement sur des tables différentes. De plus, il est
-    seulement possible d'appliquer soit une liste blanche, soit une liste
-    noire aux tables, mais pas les deux à la fois.
+.. admonition:: Note
+
+    Vous ne pouvez pas utiliser en même temps le filtrage de colonne d'inclusion
+    et d'exclusion sur la même table, seulement sur des tables différentes.
+    De plus, il est seulement possible d'appliquer soit une liste blanche,
+    soit une liste noire aux tables, mais pas les deux à la fois.
 
 .. _database.composite-dataset:
 
