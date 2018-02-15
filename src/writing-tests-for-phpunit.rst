@@ -235,12 +235,10 @@ Voir :numref:`writing-tests-for-phpunit.examples.MultipleDependencies.php`
          * @depends testProducerFirst
          * @depends testProducerSecond
          */
-        public function testConsumer()
+        public function testConsumer($a, $b)
         {
-            $this->assertEquals(
-                ['first', 'second'],
-                func_get_args()
-            );
+            $this->assertSame('first', $a);
+            $this->assertSame('second', $b);
         }
     }
     ?>
@@ -1017,5 +1015,3 @@ de comparaison "faible" sur les tableaux ou les objets.
 Dans cet exemple, la différence dans le premier indice entre
 ``1`` et ``'1'``
 est signalée même si AssertEquals considère les valeurs comme une correspondance.
-
-
