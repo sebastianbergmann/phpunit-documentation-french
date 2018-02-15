@@ -690,7 +690,7 @@ Ce nouveau format XML est spécifique au
 `serveur de bases de données MySQL <http://www.mysql.com>`_.
 Sa gestion a été ajoutée dans PHPUnit 3.5. Les fichiers écrits ce format peuvent
 être générés avec l'utilitaire
-```mysqldump`` <http://dev.mysql.com/doc/refman/5.0/en/mysqldump.html>`_.
+`mysqldump <http://dev.mysql.com/doc/refman/5.0/en/mysqldump.html>`_.
 Contrairement aux datasets CSV, que ``mysqldump``
 gère également, un unique fichier de ce format XML peut contenir des données
 pour de multiples tables. Vous pouvez créer un fichier dans ce format en
@@ -1615,5 +1615,3 @@ Comment gérer les valeurs NULL avec les DataSets au format XML à plat / CSV ?
 
 Ne le fait pas. Pour cela, vous devez utiliser des
 DataSets XML ou YAML.
-
-
