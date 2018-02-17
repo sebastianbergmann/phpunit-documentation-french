@@ -205,7 +205,7 @@ hériter de la classe
     {
         public function testCalculate()
         {
-            $this->assertEquals(2, 1 + 1);
+            $this->assertSame(2, 1 + 1);
         }
     }
     ?>
@@ -1341,7 +1341,7 @@ qui doit être retournée par la méthode
 
            public function testGetRowCount()
            {
-               $this->assertEquals(2, $this->getConnection()->getRowCount('guestbook'));
+               $this->assertSame(2, $this->getConnection()->getRowCount('guestbook'));
            }
        }
        ?>
@@ -1380,12 +1380,12 @@ qui nous ont accompagnées dans tous les exemples précédents, mais aussi une t
 
         public function testAddEntry()
         {
-            $this->assertEquals(2, $this->getConnection()->getRowCount('guestbook'), "Pre-Condition");
+            $this->assertSame(2, $this->getConnection()->getRowCount('guestbook'), "Pre-Condition");
 
             $guestbook = new Guestbook();
             $guestbook->addEntry("suzy", "Hello world!");
 
-            $this->assertEquals(3, $this->getConnection()->getRowCount('guestbook'), "Inserting failed");
+            $this->assertSame(3, $this->getConnection()->getRowCount('guestbook'), "Inserting failed");
         }
     }
     ?>

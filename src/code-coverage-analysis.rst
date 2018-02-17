@@ -216,7 +216,7 @@ montre un exemple.
          */
         public function testBalanceIsInitiallyZero()
         {
-            $this->assertEquals(0, $this->ba->getBalance());
+            $this->assertSame(0, $this->ba->getBalance());
         }
 
         /**
@@ -229,7 +229,7 @@ montre un exemple.
             }
 
             catch (BankAccountException $e) {
-                $this->assertEquals(0, $this->ba->getBalance());
+                $this->assertSame(0, $this->ba->getBalance());
 
                 return;
             }
@@ -247,7 +247,7 @@ montre un exemple.
             }
 
             catch (BankAccountException $e) {
-                $this->assertEquals(0, $this->ba->getBalance());
+                $this->assertSame(0, $this->ba->getBalance());
 
                 return;
             }
@@ -262,11 +262,11 @@ montre un exemple.
          */
         public function testDepositWithdrawMoney()
         {
-            $this->assertEquals(0, $this->ba->getBalance());
+            $this->assertSame(0, $this->ba->getBalance());
             $this->ba->depositMoney(1);
-            $this->assertEquals(1, $this->ba->getBalance());
+            $this->assertSame(1, $this->ba->getBalance());
             $this->ba->withdrawMoney(1);
-            $this->assertEquals(0, $this->ba->getBalance());
+            $this->assertSame(0, $this->ba->getBalance());
         }
     }
     ?>
@@ -337,5 +337,3 @@ de couverture de code prêtant à confusion.
         this_call_will_never_show_up_as_covered();
     }
     ?>
-
-

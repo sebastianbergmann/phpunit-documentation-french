@@ -41,7 +41,7 @@ la création de la fixture ``tableau`` dans la méthode
 de test et nous utilisons la variable d'instance nouvellement introduite.
 ``$this->stack``, à la place de la variable locale à la méthode
 ``$stack`` avec la méthode d'assertion
-``assertEquals()``.
+``assertSame()``.
 
 .. code-block:: php
     :caption: Utiliser setUp() pour créer les fixtures stack
@@ -67,14 +67,14 @@ de test et nous utilisons la variable d'instance nouvellement introduite.
         public function testPush()
         {
             array_push($this->stack, 'foo');
-            $this->assertEquals('foo', $this->stack[count($this->stack)-1]);
+            $this->assertSame('foo', $this->stack[count($this->stack)-1]);
             $this->assertFalse(empty($this->stack));
         }
 
         public function testPop()
         {
             array_push($this->stack, 'foo');
-            $this->assertEquals('foo', array_pop($this->stack));
+            $this->assertSame('foo', array_pop($this->stack));
             $this->assertTrue(empty($this->stack));
         }
     }
@@ -394,5 +394,3 @@ exclus des opération de sauvegarde et de restauration:
 
    Paramétrer l'attribut ``$backupStaticAttributesBlacklist``
    à l'intérieur de la méthode ``setUp()``, par exemple, n'a aucun effet.
-
-

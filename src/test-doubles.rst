@@ -112,7 +112,7 @@ comme montré dans l'exemple. Ceci amène à un code plus lisible et "souple".
 
             // Appeler $stub->doSomething() va maintenant retourner
             // 'foo'.
-            $this->assertEquals('foo', $stub->doSomething());
+            $this->assertSame('foo', $stub->doSomething());
         }
     }
     ?>
@@ -145,7 +145,7 @@ utilise les même bonnes pratiques utilisées par défaut par ``createMock()``.
         public function testStub()
         {
             // Créer un bouchon pour la classe SomeClass.
-            $stub = $this->getMockBuilder($originalClassName)
+            $stub = $this->getMockBuilder(SomeClass::class)
                          ->disableOriginalConstructor()
                          ->disableOriginalClone()
                          ->disableArgumentCloning()
@@ -158,7 +158,7 @@ utilise les même bonnes pratiques utilisées par défaut par ``createMock()``.
 
             // Appeler $stub->doSomething() retournera désormais
             // 'foo'.
-            $this->assertEquals('foo', $stub->doSomething());
+            $this->assertSame('foo', $stub->doSomething());
         }
     }
     ?>
@@ -193,10 +193,10 @@ pouvez obtenir ceci en utilisant ``returnArgument()`` à la place de
                  ->will($this->returnArgument(0));
 
             // $stub->doSomething('foo') retourn 'foo'
-            $this->assertEquals('foo', $stub->doSomething('foo'));
+            $this->assertSame('foo', $stub->doSomething('foo'));
 
             // $stub->doSomething('bar') returns 'bar'
-            $this->assertEquals('bar', $stub->doSomething('bar'));
+            $this->assertSame('bar', $stub->doSomething('bar'));
         }
     }
     ?>
@@ -263,8 +263,8 @@ un exemple.
 
             // $stub->doSomething() retourne différentes valeurs selon
             // les paramètres fournis.
-            $this->assertEquals('d', $stub->doSomething('a', 'b', 'c'));
-            $this->assertEquals('h', $stub->doSomething('e', 'f', 'g'));
+            $this->assertSame('d', $stub->doSomething('a', 'b', 'c'));
+            $this->assertSame('h', $stub->doSomething('e', 'f', 'g'));
         }
     }
     ?>
@@ -295,7 +295,7 @@ d'une fonction ou méthode de rappel. Voir
                  ->will($this->returnCallback('str_rot13'));
 
             // $stub->doSomething($argument) retourne str_rot13($argument)
-            $this->assertEquals('fbzrguvat', $stub->doSomething('something'));
+            $this->assertSame('fbzrguvat', $stub->doSomething('something'));
         }
     }
     ?>
@@ -325,9 +325,9 @@ un exemple.
                  ->will($this->onConsecutiveCalls(2, 3, 5, 7));
 
             // $stub->doSomething() retourne une valeur différente à chaque fois
-            $this->assertEquals(2, $stub->doSomething());
-            $this->assertEquals(3, $stub->doSomething());
-            $this->assertEquals(5, $stub->doSomething());
+            $this->assertSame(2, $stub->doSomething());
+            $this->assertSame(3, $stub->doSomething());
+            $this->assertSame(5, $stub->doSomething());
         }
     }
     ?>
@@ -1131,5 +1131,3 @@ Ceci présente plusieurs avantages :
 -
 
   Puisque les opérations du système de fichiers n'opèrent plus sur le système de fichiers réel, les opérations de nettoyage dans la méthode ``tearDown()`` ne sont plus nécessaires.
-
-
