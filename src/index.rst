@@ -2,13 +2,13 @@
 PHPUnit Manual
 ==============
 
-Edition for PHPUnit |version|. Updated on |today|.
+Documentation en français pour PHPUnit |version|. Updated on |today|.
 
 Sebastian Bergmann
 
-This work is licensed under the Creative Commons Attribution 3.0 Unported License.
+Cette oeuvre est soumise à la licence Creative Commons Attribution 3.0 non transposée.
 
-Contents:
+Table des matières :
 
 .. toctree::
    :maxdepth: 3
