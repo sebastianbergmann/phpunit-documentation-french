@@ -143,9 +143,10 @@ dépend de ``testPush()``.
 
    La valeur de retour produite par un producteur est passée "telle quelle" à son
    consommateur par défaut. Cela signifie que lorsqu'un producteur renvoie un objet,
-   une référence vers cet objet est passée a son consommateur. Lorsqu'une copie
-   doit être utilisée au lieu d'une référence, alors @depends clone
-   doit être utilisé au lieu de @depends.
+   une référence vers cet objet est passée a son consommateur. Au lieu
+   d'une référence il est aussi possible d'utiliser soit (a) une copie (profonde) via ``@depends clone`` ou (b) un
+   clone (copie superficielle) (basé sur le mot clé php ``clone``) via
+   ``@depends shallowClone``.
 
 Pour localiser rapidement les défauts, nous voulons que notre attention soit
 retenue par les tests en échecs pertinents. C'est pourquoi PHPUnit saute
