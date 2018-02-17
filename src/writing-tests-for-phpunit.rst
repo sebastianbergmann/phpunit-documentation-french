@@ -27,7 +27,7 @@ et les étapes de base pour écrire des tests avec PHPUnit:
 
 #.
 
-   A l'intérieur des méthodes de test, des méthodes d'assertion telles que ``assertEquals()`` (voir :ref:`appendixes.assertions`) sont utilisées pour affirmer qu'une valeur constatée correspond à une valeur attendue.
+   A l'intérieur des méthodes de test, des méthodes d'assertion telles que ``assertSame()`` (voir :ref:`appendixes.assertions`) sont utilisées pour affirmer qu'une valeur constatée correspond à une valeur attendue.
 
 .. code-block:: php
     :caption: Tester des opérations de tableau avec PHPUnit
@@ -41,14 +41,14 @@ et les étapes de base pour écrire des tests avec PHPUnit:
         public function testPushAndPop()
         {
             $stack = [];
-            $this->assertEquals(0, count($stack));
+            $this->assertSame(0, count($stack));
 
             array_push($stack, 'foo');
-            $this->assertEquals('foo', $stack[count($stack)-1]);
-            $this->assertEquals(1, count($stack));
+            $this->assertSame('foo', $stack[count($stack)-1]);
+            $this->assertSame(1, count($stack));
 
-            $this->assertEquals('foo', array_pop($stack));
-            $this->assertEquals(0, count($stack));
+            $this->assertSame('foo', array_pop($stack));
+            $this->assertSame(0, count($stack));
         }
     }
     ?>
@@ -115,7 +115,7 @@ entre des méthodes de test.
         public function testPush(array $stack)
         {
             array_push($stack, 'foo');
-            $this->assertEquals('foo', $stack[count($stack)-1]);
+            $this->assertSame('foo', $stack[count($stack)-1]);
             $this->assertNotEmpty($stack);
 
             return $stack;
@@ -126,7 +126,7 @@ entre des méthodes de test.
          */
         public function testPop(array $stack)
         {
-            $this->assertEquals('foo', array_pop($stack));
+            $this->assertSame('foo', array_pop($stack));
             $this->assertEmpty($stack);
         }
     }
@@ -285,7 +285,7 @@ du tableau.
          */
         public function testAdd($a, $b, $expected)
         {
-            $this->assertEquals($expected, $a + $b);
+            $this->assertSame($expected, $a + $b);
         }
 
         public function additionProvider()
@@ -312,7 +312,7 @@ du tableau.
     There was 1 failure:
 
     1) DataTest::testAdd with data set #3 (1, 1, 3)
-    Failed asserting that 2 matches expected 3.
+    Failed asserting that 2 is identical to 3.
 
     /home/sb/DataTest.php:9
 
@@ -336,7 +336,7 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
          */
         public function testAdd($a, $b, $expected)
         {
-            $this->assertEquals($expected, $a + $b);
+            $this->assertSame($expected, $a + $b);
         }
 
         public function additionProvider()
@@ -363,7 +363,7 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
     There was 1 failure:
 
     1) DataTest::testAdd with data set "one plus one" (1, 1, 3)
-    Failed asserting that 2 matches expected 3.
+    Failed asserting that 2 is identical to 3.
 
     /home/sb/DataTest.php:9
 
@@ -386,7 +386,7 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
          */
         public function testAdd($a, $b, $expected)
         {
-            $this->assertEquals($expected, $a + $b);
+            $this->assertSame($expected, $a + $b);
         }
 
         public function additionProvider()
@@ -408,7 +408,7 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
     There was 1 failure:
 
     1) DataTest::testAdd with data set #3 ('1', '1', '3')
-    Failed asserting that 2 matches expected '3'.
+    Failed asserting that 2 is identical to 3.
 
     /home/sb/DataTest.php:11
 
@@ -500,7 +500,7 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
          */
         public function testConsumer()
         {
-            $this->assertEquals(
+            $this->assertSame(
                 ['provider1', 'first', 'second'],
                 func_get_args()
             );
@@ -520,18 +520,17 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
     There was 1 failure:
 
     1) DependencyAndDataProviderComboTest::testConsumer with data set #1 ('provider2')
-    Failed asserting that two arrays are equal.
+    Failed asserting that two arrays are identical.
     --- Expected
     +++ Actual
     @@ @@
-    Array (
+    Array &0 (
     -    0 => 'provider1'
     +    0 => 'provider2'
-    1 => 'first'
-    2 => 'second'
+         1 => 'first'
+         2 => 'second'
     )
-
-    /home/sb/DependencyAndDataProviderComboTest.php:31
+    /home/sb/DependencyAndDataProviderComboTest.php:32
 
     FAILURES!
     Tests: 4, Assertions: 4, Failures: 1.
@@ -858,7 +857,7 @@ de contexte possible pour identifier le problème.
     class ArrayDiffTest extends TestCase
     {
         public function testEquality() {
-            $this->assertEquals(
+            $this->assertSame(
                 [1, 2,  3, 4, 5, 6],
                 [1, 2, 33, 4, 5, 6]
             );
@@ -878,7 +877,7 @@ de contexte possible pour identifier le problème.
     There was 1 failure:
 
     1) ArrayDiffTest::testEquality
-    Failed asserting that two arrays are equal.
+    Failed asserting that two arrays are identical.
     --- Expected
     +++ Actual
     @@ @@
@@ -913,7 +912,7 @@ et fournira quelques lignes de contexte autour de chaque différence.
     class LongArrayDiffTest extends TestCase
     {
         public function testEquality() {
-            $this->assertEquals(
+            $this->assertSame(
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2,  3, 4, 5, 6],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 33, 4, 5, 6]
             );
@@ -933,10 +932,12 @@ et fournira quelques lignes de contexte autour de chaque différence.
     There was 1 failure:
 
     1) LongArrayDiffTest::testEquality
-    Failed asserting that two arrays are equal.
+    Failed asserting that two arrays are identical.
     --- Expected
     +++ Actual
     @@ @@
+         11 => 0
+         12 => 1
          13 => 2
     -    14 => 3
     +    14 => 33

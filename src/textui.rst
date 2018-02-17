@@ -58,7 +58,7 @@ caractère pour indiquer l'avancement:
 
 PHPUnit différencie les *échecs* et les
 *erreurs*. Un échec est une assertion PHPUnit violée
-comme un appel en échec de ``assertEquals()``.
+comme un appel en échec de ``assertSame()``.
 Une erreur est une exception inattendue ou une erreur PHP. Parfois
 cette distinction s'avère utile car les erreurs tendent à être plus faciles
 à corriger que les échecs. Si vous avez une longue liste de problèmes, il vaut
@@ -505,5 +505,3 @@ dans le code suivant :
 .. admonition:: Note
 
    Notez qu'à partir de 4.8, les options peuvent être placées après le(s) argument(s).
-
-

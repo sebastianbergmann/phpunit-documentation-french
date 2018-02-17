@@ -264,7 +264,7 @@ indique quelle(s) méthode(s) une méthode de test veut tester:
      */
     public function testBalanceIsInitiallyZero()
     {
-        $this->assertEquals(0, $this->ba->getBalance());
+        $this->assertSame(0, $this->ba->getBalance());
     }
 
 Si elle est fournie, seule l'information de couverture de code pour
@@ -728,7 +728,7 @@ dans le bloc de documentation d'une méthode pour la marquer comme méthode de t
      */
     public function initialBalanceShouldBe0()
     {
-        $this->assertEquals(0, $this->ba->getBalance());
+        $this->assertSame(0, $this->ba->getBalance());
     }
 
 .. _appendixes.annotations.testdox:
@@ -752,7 +752,7 @@ L'annotation ``@testdox`` peut être appliqué aux classes de tests et aux méth
          */
         public function balanceIsInitiallyZero()
         {
-            $this->assertEquals(0, $this->ba->getBalance());
+            $this->assertSame(0, $this->ba->getBalance());
         }
     }
 
@@ -783,7 +783,7 @@ vous pouvez définir un jeu de données en utilisant l'annotation ``@testWith``.
      */
     public function testStringLength(string $input, int $expectedLength)
     {
-        $this->assertEquals($expectedLength, strlen($input));
+        $this->assertSame($expectedLength, strlen($input));
     }
 
 .. _appendixes.annotations.ticket:
@@ -818,5 +818,3 @@ This annotation is notamment utile en mode de couverture stricte où
 du code involontairement couvert va faire échouer un test. Voir
 :ref:`risky-tests.unintentionally-covered-code` pour plus
 d'informations sur le mode de couverture stricte.
-
-
