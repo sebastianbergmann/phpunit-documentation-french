@@ -2,7 +2,7 @@
 PHPUnit Manual
 ==============
 
-Documentation en français pour PHPUnit |version|. Updated on |today|.
+Documentation en français pour PHPUnit |version|. Mise à jour : |today|.
 
 Sebastian Bergmann
 
