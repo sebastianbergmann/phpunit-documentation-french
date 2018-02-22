@@ -2452,14 +2452,14 @@ assertThat()
 ############
 
 Des assertions plus complexes peuvent être formulées en utilisant les
-classes ``PHPUnit_Framework_Constraint``. Elles peuvent être
+classes ``PHPUnit\Framework\Constraint``. Elles peuvent être
 évaluées avec la méthode ``assertThat()``.
 :numref:`appendixes.assertions.assertThat.example` montre comment les contraintes
 ``logicalNot()`` et ``equalTo()``
 peuvent être utilisées pour exprimer la même assertion que
 ``assertNotEquals()``.
 
-``assertThat(mixed $value, PHPUnit_Framework_Constraint $constraint[, $message = ''])``
+``assertThat(mixed $value, PHPUnit\Framework\Constraint $constraint[, $message = ''])``
 
 Signale une erreur identifiée par ``$message``si ``$value`` ne correspond pas à ``$constraint``.
 
@@ -2488,7 +2488,7 @@ Signale une erreur identifiée par ``$message``si ``$value`` ne correspond pas �
     ?>
 
 :numref:`appendixes.assertions.assertThat.tables.constraints` montre les
-classes ``PHPUnit_Framework_Constraint`` disponibles.
+classes ``PHPUnit\Framework\Constraint`` disponibles.
 
 .. rst-class:: table
 .. list-table:: Contraintes
@@ -2497,71 +2497,71 @@ classes ``PHPUnit_Framework_Constraint`` disponibles.
 
     * - Contrainte
       - Signification
-    * - ``PHPUnit_Framework_Constraint_Attribute attribute(PHPUnit_Framework_Constraint $constraint, $attributeName)``
+    * - ``PHPUnit\Framework\Constraint\Attribute attribute(PHPUnit\Framework\Constraint $constraint, $attributeName)``
       - Contrainte qui applique une autre contrainte à un attribut d'une classe ou d'un objet.
-    * - ``PHPUnit_Framework_Constraint_IsAnything anything()``
+    * - ``PHPUnit\Framework\Constraint\IsAnything anything()``
       - Contrainte qui accepte toute valeur d'entrée.
-    * - ``PHPUnit_Framework_Constraint_ArrayHasKey arrayHasKey(mixed $key)``
+    * - ``PHPUnit\Framework\Constraint\ArrayHasKey arrayHasKey(mixed $key)``
       - Contrainte qui valide que le tableau évalué a une clé donnée.
-    * - ``PHPUnit_Framework_Constraint_TraversableContains contains(mixed $value)``
+    * - ``PHPUnit\Framework\Constraint\TraversableContains contains(mixed $value)``
       - Contrainte qui valide que le ``tableau`` ou l'objet qui implémente l'interface ``Iterator`` évalué contient une valeur donnée.
-    * - ``PHPUnit_Framework_Constraint_TraversableContainsOnly containsOnly(string $type)``
+    * - ``PHPUnit\Framework\Constraint\TraversableContainsOnly containsOnly(string $type)``
       - Contrainte qui valide que le ``tableau`` ou l'objet qui implémente l'interface ``Iterator`` évalué ne contient que des valeurs d'un type donné.
-    * - ``PHPUnit_Framework_Constraint_TraversableContainsOnly containsOnlyInstancesOf(string $classname)``
+    * - ``PHPUnit\Framework\Constraint\TraversableContainsOnly containsOnlyInstancesOf(string $classname)``
       - Contrainte qui valide que le ``tableau`` ou l'objet qui implémente l'interface ``Iterator`` évalué ne contient que des instances d'une classe donnée.
-    * - ``PHPUnit_Framework_Constraint_IsEqual equalTo($value, $delta = 0, $maxDepth = 10)``
+    * - ``PHPUnit\Framework\Constraint\IsEqual equalTo($value, $delta = 0, $maxDepth = 10)``
       - Contrainte qui vérifie si une valeur est égale à une autre.
-    * - ``PHPUnit_Framework_Constraint_Attribute attributeEqualTo($attributeName, $value, $delta = 0, $maxDepth = 10)``
+    * - ``PHPUnit\Framework\Constraint\Attribute attributeEqualTo($attributeName, $value, $delta = 0, $maxDepth = 10)``
       - Contrainte qui vérifie si une valeur est égale à un attribut d'une classe ou d'un objet.
-    * - ``PHPUnit_Framework_Constraint_DirectoryExists directoryExists()``
+    * - ``PHPUnit\Framework\Constraint\DirectoryExists directoryExists()``
       - Contrainte qui vérifie si le répertoire évalué existe.
-    * - ``PHPUnit_Framework_Constraint_FileExists fileExists()``
+    * - ``PHPUnit\Framework\Constraint\FileExists fileExists()``
       - Contrainte qui vérifie si le fichier (name) évalué existe.
-    * - ``PHPUnit_Framework_Constraint_IsReadable isReadable()``
+    * - ``PHPUnit\Framework\Constraint\IsReadable isReadable()``
       - Contrainte qui vérifie si le fichier (name) évalué est accessible en écriture.
-    * - ``PHPUnit_Framework_Constraint_IsWritable isWritable()``
+    * - ``PHPUnit\Framework\Constraint\IsWritable isWritable()``
       - Contrainte qui vérifie si le fichier (name) évalué est accessible en écriture.
-    * - ``PHPUnit_Framework_Constraint_GreaterThan greaterThan(mixed $value)``
+    * - ``PHPUnit\Framework\Constraint\GreaterThan greaterThan(mixed $value)``
       - Contrainte qui valide que la valeur évaluée est supérieure à une valeur donnée.
-    * - ``PHPUnit_Framework_Constraint_Or greaterThanOrEqual(mixed $value)``
+    * - ``PHPUnit\Framework\Constraint\Or greaterThanOrEqual(mixed $value)``
       - Contrainte qui valide que la valeur évaluée est supérieure ou égale à une valeur donnée.
-    * - ``PHPUnit_Framework_Constraint_ClassHasAttribute classHasAttribute(string $attributeName)``
+    * - ``PHPUnit\Framework\Constraint\ClassHasAttribute classHasAttribute(string $attributeName)``
       - La contrainte qui valide que la classe évaluée possède un attribut donné.
-    * - ``PHPUnit_Framework_Constraint_ClassHasStaticAttribute classHasStaticAttribute(string $attributeName)``
+    * - ``PHPUnit\Framework\Constraint\ClassHasStaticAttribute classHasStaticAttribute(string $attributeName)``
       - La contrainte qui valide que la classe évaluée possède un attribut statique donné.
-    * - ``PHPUnit_Framework_Constraint_ObjectHasAttribute hasAttribute(string $attributeName)``
+    * - ``PHPUnit\Framework\Constraint\ObjectHasAttribute hasAttribute(string $attributeName)``
       - La contrainte qui valide que l'objet évalué possède un attribut donné.
-    * - ``PHPUnit_Framework_Constraint_IsIdentical identicalTo(mixed $value)``
+    * - ``PHPUnit\Framework\Constraint\IsIdentical identicalTo(mixed $value)``
       - Contrainte qui valide qu'une valeur est identique à une autre.
-    * - ``PHPUnit_Framework_Constraint_IsFalse isFalse()``
+    * - ``PHPUnit\Framework\Constraint\IsFalse isFalse()``
       - Contrainte qui valide qu'une valeur évaluée est ``false``.
-    * - ``PHPUnit_Framework_Constraint_IsInstanceOf isInstanceOf(string $className)``
+    * - ``PHPUnit\Framework\Constraint\IsInstanceOf isInstanceOf(string $className)``
       - La contrainte qui VALIDE que l'objet évalué est une instance d'une classe donnée.
-    * - ``PHPUnit_Framework_Constraint_IsNull isNull()``
+    * - ``PHPUnit\Framework\Constraint\IsNull isNull()``
       - Contrainte qui valide qu'une valeur évaluée est ``null``.
-    * - ``PHPUnit_Framework_Constraint_IsTrue isTrue()``
+    * - ``PHPUnit\Framework\Constraint\IsTrue isTrue()``
       - Contrainte qui valide qu'une valeur évaluée est ``true``.
-    * - ``PHPUnit_Framework_Constraint_IsType isType(string $type)``
+    * - ``PHPUnit\Framework\Constraint\IsType isType(string $type)``
       - Contrainte qui valide que la valeur évaluée est d'un type spécifié.
-    * - ``PHPUnit_Framework_Constraint_LessThan lessThan(mixed $value)``
+    * - ``PHPUnit\Framework\Constraint\LessThan lessThan(mixed $value)``
       - Constraint that asserts that the value it is evaluated for is smaller than a given value.
-    * - ``PHPUnit_Framework_Constraint_Or lessThanOrEqual(mixed $value)``
+    * - ``PHPUnit\Framework\Constraint\Or lessThanOrEqual(mixed $value)``
       - Contrainte qui valide que la valeur évaluée est inférieure ou égale à une valeur donnée.
     * - ``logicalAnd()``
       - ET logique (AND).
-    * - ``logicalNot(PHPUnit_Framework_Constraint $constraint)``
+    * - ``logicalNot(PHPUnit\Framework\Constraint $constraint)``
       - NON logique (NOT).
     * - ``logicalOr()``
       - OU logique (OR).
     * - ``logicalXor()``
       - OU exclusif logique (XOR).
-    * - ``PHPUnit_Framework_Constraint_PCREMatch matchesRegularExpression(string $pattern)``
+    * - ``PHPUnit\Framework\Constraint\PCREMatch matchesRegularExpression(string $pattern)``
       - Contrainte qui valide que la chaine évaluée correspond à une expression régulière.
-    * - ``PHPUnit_Framework_Constraint_StringContains stringContains(string $string, bool $case)``
+    * - ``PHPUnit\Framework\Constraint\StringContains stringContains(string $string, bool $case)``
       - Contrainte qui valide que la chaine évaluée contient une chaine donnée.
-    * - ``PHPUnit_Framework_Constraint_StringEndsWith stringEndsWith(string $suffix)``
+    * - ``PHPUnit\Framework\Constraint\StringEndsWith stringEndsWith(string $suffix)``
       - Contrainte qui valide que la chaine évaluée termine par un suffixe donné.
-    * - ``PHPUnit_Framework_Constraint_StringStartsWith stringStartsWith(string $prefix)``
+    * - ``PHPUnit\Framework\Constraint\StringStartsWith stringStartsWith(string $prefix)``
       - Contrainte qui valide que la chaine évaluée commence par un préfixe donné.
 
 .. _appendixes.assertions.assertTrue:

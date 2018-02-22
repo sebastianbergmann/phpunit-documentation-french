@@ -34,13 +34,15 @@ de suivre la façon dont PHPUnit implémente ses propres assertions. Comme vous 
 ``assertThat()`` pour évaluation.
 
 .. code-block:: php
-    :caption: Les méthodes assertTrue() et isTrue() de la classe PHPUnit_Framework_Assert
+    :caption: Les méthodes assertTrue() et isTrue() de la classe PHPUnit\Framework\Assert
     :name: extending-phpunit.examples.Assert.php
 
     <?php
+    namespace PHPUnit\Framework;
+
     use PHPUnit\Framework\TestCase;
 
-    abstract class PHPUnit_Framework_Assert
+    abstract class Assert
     {
         // ...
 
@@ -49,7 +51,7 @@ de suivre la façon dont PHPUnit implémente ses propres assertions. Comme vous 
          *
          * @param  boolean $condition
          * @param  string  $message
-         * @throws PHPUnit_Framework_AssertionFailedError
+         * @throws PHPUnit\Framework\AssertionFailedError
          */
         public static function assertTrue($condition, $message = '')
         {
@@ -59,32 +61,34 @@ de suivre la façon dont PHPUnit implémente ses propres assertions. Comme vous 
         // ...
 
         /**
-         * Returns a PHPUnit_Framework_Constraint_IsTrue matcher object.
+         * Returns a PHPUnit\Framework\Constraint\IsTrue matcher object.
          *
-         * @return PHPUnit_Framework_Constraint_IsTrue
+         * @return PHPUnit\Framework\Constraint\IsTrue
          * @since  Method available since Release 3.3.0
          */
         public static function isTrue()
         {
-            return new PHPUnit_Framework_Constraint_IsTrue;
+            return new PHPUnit\Framework\Constraint\IsTrue;
         }
 
         // ...
     }?>
 
 :numref:`extending-phpunit.examples.IsTrue.php` montre comment
-``PHPUnit_Framework_Constraint_IsTrue`` étend la classe
+``PHPUnit\Framework\Constraint\IsTrue`` étend la classe
 abstraite de base pour des objets matcher (ou des contraintes),
-``PHPUnit_Framework_Constraint``.
+``PHPUnit\Framework\Constraint``.
 
 .. code-block:: php
     :caption: La classe PHPUnit_Framework_Constraint_IsTrue
     :name: extending-phpunit.examples.IsTrue.php
 
     <?php
-    use PHPUnit\Framework\TestCase;
+    namespace PHPUnit\Framework\Constraint;
 
-    class PHPUnit_Framework_Constraint_IsTrue extends PHPUnit_Framework_Constraint
+    use PHPUnit\Framework\Constraint;
+
+    class IsTrue extends Constraint
     {
         /**
          * Evaluates the constraint for parameter $other. Returns true if the
@@ -111,7 +115,7 @@ abstraite de base pour des objets matcher (ou des contraintes),
 
 L'effort d'implémentation des méthodes ``assertTrue()`` et
 ``isTrue()`` ainsi que la classe
-``PHPUnit_Framework_Constraint_IsTrue`` tire bénéfice du fait que
+``PHPUnit\Framework\Constraint\IsTrue`` tire bénéfice du fait que
 ``assertThat()`` prend automatiquement soin d'évaluer l'assertion et
 les tâches de suivi comme le décompte à des fins de statistique.
 Plus encore, la méthode ``isTrue()`` peut être utilisée comme un matcher
@@ -136,47 +140,47 @@ montre une implémentation simple de l'interface
 
     class SimpleTestListener implements TestListener
     {
-        public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
+        public function addError(PHPUnit\Framework\Test $test, Exception $e, $time)
         {
             printf("Error while running test '%s'.\n", $test->getName());
         }
 
-        public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
+        public function addFailure(PHPUnit\Framework\Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
         {
             printf("Test '%s' failed.\n", $test->getName());
         }
 
-        public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
+        public function addIncompleteTest(PHPUnit\Framework\Test $test, Exception $e, $time)
         {
             printf("Test '%s' is incomplete.\n", $test->getName());
         }
 
-        public function addRiskyTest(PHPUnit_Framework_Test $test, Exception $e, $time)
+        public function addRiskyTest(PHPUnit\Framework\Test $test, Exception $e, $time)
         {
             printf("Test '%s' is deemed risky.\n", $test->getName());
         }
 
-        public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
+        public function addSkippedTest(PHPUnit\Framework\Test $test, Exception $e, $time)
         {
             printf("Test '%s' has been skipped.\n", $test->getName());
         }
 
-        public function startTest(PHPUnit_Framework_Test $test)
+        public function startTest(PHPUnit\Framework\Test $test)
         {
             printf("Test '%s' started.\n", $test->getName());
         }
 
-        public function endTest(PHPUnit_Framework_Test $test, $time)
+        public function endTest(PHPUnit\Framework\Test $test, $time)
         {
             printf("Test '%s' ended.\n", $test->getName());
         }
 
-        public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
+        public function startTestSuite(PHPUnit\Framework\TestSuite $suite)
         {
             printf("TestSuite '%s' started.\n", $suite->getName());
         }
 
-        public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
+        public function endTestSuite(PHPUnit\Framework\TestSuite $suite)
         {
             printf("TestSuite '%s' ended.\n", $suite->getName());
         }
@@ -185,7 +189,7 @@ montre une implémentation simple de l'interface
 
 :numref:`extending-phpunit.examples.BaseTestListener.php`
 montre comment étendre la classe abstraite
-``PHPUnit_Framework_BaseTestListener``, qui permet de spécifier uniquement les méthodes d'interface
+``PHPUnit\Framework\BaseTestListener``, qui permet de spécifier uniquement les méthodes d'interface
 qui sont intéressantes pour votre cas d'utilisation, tout en fournissant des implémentations vides pour
 tous les autres.
 
@@ -194,11 +198,11 @@ tous les autres.
     :name: extending-phpunit.examples.BaseTestListener.php
 
     <?php
-    use PHPUnit\Framework\TestCase;
+    use PHPUnit\Framework\BaseTestListener;
 
-    class ShortTestListener extends PHPUnit_Framework_BaseTestListener
+    class ShortTestListener extends BaseTestListener
     {
-        public function endTest(PHPUnit_Framework_Test $test, $time)
+        public function endTest(PHPUnit\Framework\Test $test, $time)
         {
             printf("Test '%s' ended.\n", $test->getName());
         }
@@ -241,7 +245,7 @@ qui illustre comment écrire vos propres décorateurs de tests.
     {
         private $timesRepeat = 1;
 
-        public function __construct(PHPUnit_Framework_Test $test, $timesRepeat = 1)
+        public function __construct(PHPUnit\Framework\Test $test, $timesRepeat = 1)
         {
             parent::__construct($test);
 
@@ -273,12 +277,12 @@ qui illustre comment écrire vos propres décorateurs de tests.
 
 .. _extending-phpunit.PHPUnit_Framework_Test:
 
-Implémenter PHPUnit_Framework_Test
+Implémenter HPUnit\Framework\Test
 ##################################
 
-L'interface ``PHPUnit_Framework_Test`` est restreinte et
+L'interface ``HPUnit\Framework\Test`` est restreinte et
 facile à implémenter. Vous pouvez écrire une implémentation de
-``PHPUnit_Framework_Test`` qui est plus simple que
+``HPUnit\Framework\Test`` qui est plus simple que
 ``PHPUnit\Framework\TestCase`` et qui exécute
 *des tests dirigés par les données*, par exemple.
 
@@ -295,7 +299,7 @@ et la seconde valeur celle constatée.
     <?php
     use PHPUnit\Framework\TestCase;
 
-    class DataDrivenTest implements PHPUnit_Framework_Test
+    class DataDrivenTest implements HPUnit\Framework\Test
     {
         private $lines;
 
@@ -309,10 +313,10 @@ et la seconde valeur celle constatée.
             return 1;
         }
 
-        public function run(PHPUnit_Framework_TestResult $result = null)
+        public function run(PHPUnit\Framework\TestResult $result = null)
         {
             if ($result === null) {
-                $result = new PHPUnit_Framework_TestResult;
+                $result = new PHPUnit\Framework\TestResult;
             }
 
             foreach ($this->lines as $line) {
@@ -323,7 +327,7 @@ et la seconde valeur celle constatée.
                 list($expected, $actual) = explode(';', $line);
 
                 try {
-                    PHPUnit_Framework_Assert::assertEquals(
+                    PHPUnit\Framework\Assert::assertEquals(
                       trim($expected), trim($actual)
                     );
                 }
@@ -350,7 +354,7 @@ et la seconde valeur celle constatée.
     }
 
     $test = new DataDrivenTest('data_file.csv');
-    $result = PHPUnit_TextUI_TestRunner::run($test);
+    $result = PHPUnit\TextUI\TestRunner::run($test);
     ?>
 
 .. code-block:: bash

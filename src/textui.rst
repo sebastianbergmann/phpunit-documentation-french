@@ -176,9 +176,9 @@ dans le code suivant :
     ``UnitTest`` doit soit être une classe qui hérite
     de ``PHPUnit\Framework\TestCase`` soit une classe qui
     fournit une méthode ``public static suite()`` retournant
-    un objet ``PHPUnit_Framework_Test``, par exemple
+    un objet ``PHPUnit\Framework\Test``, par exemple
     une instance de la classe
-    ``PHPUnit_Framework_TestSuite``.
+    ``PHPUnit\Framework\TestSuite``.
 
 ``phpunit UnitTest UnitTest.php``
 
@@ -443,7 +443,7 @@ dans le code suivant :
 
 ``--loader``
 
-    Indique l'implémentation de ``PHPUnit_Runner_TestSuiteLoader``
+    Indique l'implémentation de ``PHPUnit\Runner\TestSuiteLoader``
     à utiliser.
 
     Le chargeur standard de suite de tests va chercher les fichiers source
@@ -465,7 +465,7 @@ dans le code suivant :
 ``--printer``
 
     Indique l'afficheur de résultats à utiliser. Cette classe d'afficheur doit
-    hériter de ``PHPUnit_Util_Printer`` et implémenter l'interface
+    hériter de ``PHPUnit\Util\Printer`` et implémenter l'interface
     ``PHPUnit\Framework\TestListener``.
 
 ``--bootstrap``
