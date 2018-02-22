@@ -33,17 +33,17 @@ comme étant réussi.
 Si nous pensons à un test réussi comme à un feu vert et à un échec de test
 comme à un feu rouge, nous avons besoin d'un feu orange additionnel pour signaler
 un test comme étant incomplet ou pas encore implémenté.
-``PHPUnit_Framework_IncompleteTest`` est une interface de marquage
+``PHPUnit\Framework\IncompleteTest`` est une interface de marquage
 pour signaler une exception qui est levée par une méthode de test comme résultat
 d'un test incomplet ou pas encore implémenté.
-``PHPUnit_Framework_IncompleteTestError`` est l'implémentation
+``PHPUnit\Framework\IncompleteTestError`` est l'implémentation
 standard de cette interface.
 
 :numref:`incomplete-and-skipped-tests.incomplete-tests.examples.SampleTest.php`
 montre une classe de cas de tests, ``SampleTest``, qui contient une unique méthode de
 test, ``testSomething()``. En appelant la méthode pratique
 ``markTestIncomplete()`` (qui lève automatiquement
-une exception ``PHPUnit_Framework_IncompleteTestError``)
+une exception ``PHPUnit\Framework\IncompleteTestError``)
 dans la méthode de test, nous marquons le test comme étant incomplet.
 
 .. code-block:: php
