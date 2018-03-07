@@ -879,9 +879,9 @@ L'implémentation de ce DataSet tableau est simple et
     <?php
 
     use PHPUnit\DbUnit\DataSet\AbstractDataSet;
-    use PHPUnit\DbUnit\DataSet\DefaultTableMetaData
-    use PHPUnit\DbUnit\DataSet\DefaultTable
-    use PHPUnit\DbUnit\DataSet\DefaultTableIterator
+    use PHPUnit\DbUnit\DataSet\DefaultTableMetaData;
+    use PHPUnit\DbUnit\DataSet\DefaultTable;
+    use PHPUnit\DbUnit\DataSet\DefaultTableIterator;
 
     class MyApp_DbUnit_ArrayDataSet extends AbstractDataSet
     {
