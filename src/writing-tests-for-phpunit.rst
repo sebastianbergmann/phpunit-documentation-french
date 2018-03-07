@@ -51,7 +51,6 @@ et les étapes de base pour écrire des tests avec PHPUnit:
             $this->assertSame(0, count($stack));
         }
     }
-    ?>
 |
     *Martin Fowler*:
 
@@ -130,7 +129,6 @@ entre des méthodes de test.
             $this->assertEmpty($stack);
         }
     }
-    ?>
 
 Dans l'exemple ci-dessus, le premier test, ``testEmpty()``,
 crée un nouveau tableau et affirme qu'il est vide. Le test renvoie ensuite
@@ -175,7 +173,6 @@ localisation des défauts en exploitant les dépendances entre les tests comme m
         {
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -242,7 +239,6 @@ Voir :numref:`writing-tests-for-phpunit.examples.MultipleDependencies.php`
             $this->assertSame('second', $b);
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -299,7 +295,6 @@ du tableau.
             ];
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -350,7 +345,6 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
             ];
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -395,7 +389,6 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
             return new CsvFileIterator('data.csv');
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -459,7 +452,6 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
             $this->key++;
         }
     }
-    ?>
 
 Quand un test reçoit des entrées à la fois d'une méthode ``@dataProvider``
 et d'un ou plusieurs tests dont il ``@depends``,
@@ -507,7 +499,6 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
             );
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -574,7 +565,6 @@ si une exception est levée par le code testé.
             $this->expectException(InvalidArgumentException::class);
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -629,7 +619,6 @@ montre un exemple.
         {
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -682,7 +671,6 @@ PHP comme montré dans :numref:`writing-tests-for-phpunit.exceptions.examples.Er
             include 'not_existing_file.php';
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -724,21 +712,24 @@ en supprimant les remarques qui auraient conduit à une
     {
         public function testFileWriting() {
             $writer = new FileWriter;
+
             $this->assertFalse(@$writer->write('/is-not-writeable/file', 'stuff'));
         }
     }
+
     class FileWriter
     {
         public function write($file, $content) {
             $file = fopen($file, 'w');
+
             if($file == false) {
                 return false;
             }
+
             // ...
         }
     }
 
-    ?>
 
 .. code-block:: bash
 
@@ -752,8 +743,7 @@ en supprimant les remarques qui auraient conduit à une
     OK (1 test, 1 assertion)
 
 Sans la suppression d'erreur, le test échouerait à rapporter
-``fopen(/is-not-writeable/file): failed to open stream:
-    No such file or directory``.
+``fopen(/is-not-writeable/file): failed to open stream: No such file or directory``.
 
 .. _writing-tests-for-phpunit.output:
 
@@ -793,7 +783,6 @@ sera compté comme étant en échec.
             print 'baz';
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -864,7 +853,6 @@ de contexte possible pour identifier le problème.
             );
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -919,7 +907,6 @@ et fournira quelques lignes de contexte autour de chaque différence.
             );
         }
     }
-    ?>
 
 .. code-block:: bash
 
@@ -980,7 +967,6 @@ de comparaison "faible" sur les tableaux ou les objets.
             );
         }
     }
-    ?>
 
 .. code-block:: bash
 
