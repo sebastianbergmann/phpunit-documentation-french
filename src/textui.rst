@@ -235,8 +235,7 @@ dans le code suivant :
 ``--testdox-html`` et ``--testdox-text``
 
     Génère la documentation agile au format HTML ou texte pur pour les
-    tests exécutés. Voir :ref:`other-uses-for-tests` pour
-    plus de détails.
+    tests exécutés (Voir :ref:`textui.testdox`).
 
 ``--filter``
 
@@ -459,8 +458,7 @@ dans le code suivant :
 
 ``--testdox``
 
-    Rapporte l'avancement des tests sous forme de documentation agile. Voir
-    :ref:`other-uses-for-tests` pour plus de détails.
+    Rapporte l'avancement des tests au format TestDox (Voir :ref:`textui.testdox`).
 
 ``--printer``
 
@@ -505,3 +503,46 @@ dans le code suivant :
 .. admonition:: Note
 
    Notez qu'à partir de 4.8, les options peuvent être placées après le(s) argument(s).
+
+.. _textui.testdox:
+
+TestDox
+#######
+
+La fonctionnalité TestDox de PHPUnit examine une classe de test et tous
+les noms de méthode de test pour les convertir les noms PHP au format Camel Case en phrases :
+``testBalanceIsInitiallyZero()`` (ou ``test_balance_is_initially_zero()``) devient "Balance is
+initially zero". S'il existe plusieurs méthodes de test dont les noms
+ne diffèrent que par un suffixe constitué de un ou plusieurs chiffres, telles que
+``testBalanceCannotBecomeNegative()`` et
+``testBalanceCannotBecomeNegative2()``, la phrase
+"Balance ne peut pas être négative" n'apparaîtra qu'une seule fois, en supposant que
+tous ces tests ont réussi.
+
+Jetons un oeil sur la documentation agile générée pour la classe
+``BankAccount``
+
+.. code-block:: bash
+
+    $ phpunit --testdox BankAccountTest
+    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+
+    BankAccount
+      ✔ Balance is initially zero
+      ✔ Balance cannot become negative
+
+La documentation agile peut aussi être générée en HTML ou au
+format texte et écrite dans un fichier en utilisant les paramètres
+``--testdox-html`` et ``--testdox-text``.
+
+La documentation agile peut être utilisée pour documenter les hypothèses
+que vous faites sur les paquets externes que vous utilisez dans votre projet.
+Quand vous utilisez un paquet externe, vous vous exposez au risque que le paquet
+ne se comportera pas comme vous le prévoyez et que les futures versions du paquet
+changeront de façon subtile, ce qui cassera votre code sans que vous ne le sachiez.
+Vous pouvez réduire ces risques en écrivant un test à chaque fois que vous faites
+une hypothèse. Si votre test réussit, votre hypothèse est valide. Si vous documentez
+toutes vos hypothèses avec des tests, les futures livraisons du paquet externe ne
+poseront pas de problème : si les tests réussissent, votre système doit continuer à
+fonctionner.
+

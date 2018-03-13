@@ -737,7 +737,8 @@ dans le bloc de documentation d'une méthode pour la marquer comme méthode de t
 ########
 
 Spécifie une description alternative utilisée lors de la génération des phrases de la
-documentation agile (voir :ref:`other-uses-for-tests.agile-documentation`).
+documentation agile.
+
 L'annotation ``@testdox`` peut être appliqué aux classes de tests et aux méthodes.
 
 .. code-block:: php
