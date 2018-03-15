@@ -215,12 +215,12 @@ des tests.
 
 .. _extending-phpunit.PHPUnit_Framework_Test:
 
-Implémenter HPUnit\Framework\Test
+Implémenter PHPUnit\Framework\Test
 ##################################
 
-L'interface ``HPUnit\Framework\Test`` est restreinte et
+L'interface ``PHPUnit\Framework\Test`` est restreinte et
 facile à implémenter. Vous pouvez écrire une implémentation de
-``HPUnit\Framework\Test`` qui est plus simple que
+``PHPUnit\Framework\Test`` qui est plus simple que
 ``PHPUnit\Framework\TestCase`` et qui exécute
 *des tests dirigés par les données*, par exemple.
 
@@ -237,7 +237,7 @@ et la seconde valeur celle constatée.
     <?php
     use PHPUnit\Framework\TestCase;
 
-    class DataDrivenTest implements HPUnit\Framework\Test
+    class DataDrivenTest implements PHPUnit\Framework\Test
     {
         private $lines;
 
