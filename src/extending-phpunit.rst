@@ -213,68 +213,6 @@ Dans :ref:`appendixes.configuration.test-listeners` vous pouvez voir
 comment configurer PHPUnit pour brancher votre moniteur de test lors de l'exécution
 des tests.
 
-.. _extending-phpunit.PHPUnit_Extensions_TestDecorator:
-
-Hériter de PHPUnit_Extensions_TestDecorator
-###########################################
-
-Vous pouvez encapsuler des cas de test ou des séries de tests dans une
-sous-classe de ``PHPUnit_Extensions_TestDecorator`` et utiliser
-le Design Pattern Decorator pour réaliser certaines actions avant et après
-que les tests soient exécutés.
-
-PHPUnit apporte un décorateur de test concrets :
-``PHPUnit_Extensions_RepeatedTest``. Il est utilisé pour
-exécuter de manière répétée un test et ne le comptabiliser comme succès que si
-toutes les itérations ont réussi.
-
-:numref:`extending-phpunit.examples.RepeatedTest.php`
-montre une version raccourcie du décorateur de test ``PHPUnit_Extensions_RepeatedTest``
-qui illustre comment écrire vos propres décorateurs de tests.
-
-.. code-block:: php
-    :caption: Le décorateur RepeatedTest
-    :name: extending-phpunit.examples.RepeatedTest.php
-
-    <?php
-    use PHPUnit\Framework\TestCase;
-
-    require_once 'PHPUnit/Extensions/TestDecorator.php';
-
-    class PHPUnit_Extensions_RepeatedTest extends PHPUnit_Extensions_TestDecorator
-    {
-        private $timesRepeat = 1;
-
-        public function __construct(PHPUnit\Framework\Test $test, $timesRepeat = 1)
-        {
-            parent::__construct($test);
-
-            if (is_integer($timesRepeat) &&
-                $timesRepeat >= 0) {
-                $this->timesRepeat = $timesRepeat;
-            }
-        }
-
-        public function count()
-        {
-            return $this->timesRepeat * $this->test->count();
-        }
-
-        public function run(PHPUnit_Framework_TestResult $result = null)
-        {
-            if ($result === null) {
-                $result = $this->createResult();
-            }
-
-            for ($i = 0; $i < $this->timesRepeat && !$result->shouldStop(); $i++) {
-                $this->test->run($result);
-            }
-
-            return $result;
-        }
-    }
-    ?>
-
 .. _extending-phpunit.PHPUnit_Framework_Test:
 
 Implémenter HPUnit\Framework\Test
