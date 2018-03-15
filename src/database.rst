@@ -278,7 +278,7 @@ l'état initial de la base de données avant que chaque test ne soit
 exécuté. L'état de la base de données est abstrait par les
 concepts DataSet et DataTable, tous les deux représentés par les
 interfaces
-``HPUnit\DbUnit\DataSet\IDataSet`` et
+``PHPUnit\DbUnit\DataSet\IDataSet`` et
 ``PHPUnit\DbUnit\DataSet\IDataTable``.
 La prochaine section décrira en détail comment ces concepts fonctionnent
 et quels sont les avantages à les utiliser lors des tests de base de données.
