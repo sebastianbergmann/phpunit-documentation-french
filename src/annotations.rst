@@ -814,8 +814,7 @@ exemple est un objet-valeur qui est nécessaire pour tester une partie du code.
         // ...
     }
 
-Cette annotation est spéciali
-This annotation is notamment utile en mode de couverture stricte où
+Cette annotation est particulièrement utile en mode de couverture stricte où
 du code involontairement couvert va faire échouer un test. Voir
 :ref:`risky-tests.unintentionally-covered-code` pour plus
 d'informations sur le mode de couverture stricte.
