@@ -301,17 +301,35 @@ dans le code suivant :
     Voir :numref:`textui.examples.filter-patterns` pour des exemples
     de motifs de filtre valide.
 
-    .. code-block:: php
+    .. code-block:: shell
         :caption: Exemples de motif de filtre
         :name: textui.examples.filter-patterns
+
+        --filter 'TestNamespace\\TestCaseClass::testMethod'
+        --filter 'TestNamespace\\TestCaseClass'
+        --filter TestNamespace
+        --filter TestCaseClase
+        --filter testMethod
+        --filter '/::testMethod .*"my named data"/'
+        --filter '/::testMethod .*#5$/'
+        --filter '/::testMethod .*#(5|6|7)$/'
 
     Voir :numref:`textui.examples.filter-shortcuts` pour quelques
     raccourcis supplémentaires disponibles pour faire correspondre
     des fournisseurs de données.
 
-    .. code-block:: php
+    .. code-block:: shell
         :caption: Raccourcis de filtre
         :name: textui.examples.filter-shortcuts
+
+        --filter 'testMethod#2'
+        --filter 'testMethod#2-4'
+        --filter '#2'
+        --filter '#2-4'
+        --filter 'testMethod@my named data'
+        --filter 'testMethod@my.*data'
+        --filter '@my named data'
+        --filter '@my.*data'
 
 ``--testsuite``
 
