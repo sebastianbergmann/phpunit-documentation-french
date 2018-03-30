@@ -50,7 +50,10 @@ retourner une valeur donnée quand elles sont appelées.
    Merci de noter que les méthodes ``final``, ``private``,
    ``protected`` et ``static`` ne peuvent pas être remplacées
    par un bouchon (stub) ou un mock. Elles seront ignorées par la
-   fonction de doublure de test de PHPUnit et conserveront leur comportement initial.
+   fonction de doublure de test de PHPUnit et conserveront leur comportement initial sauf pour
+   les méthodes ``static`` qui seront renplacées par une méthode jetant
+   une exception ``\PHPUnit\Framework\MockObject\BadMethodCallException``.
+
 
 .. _test-doubles.stubs:
 
