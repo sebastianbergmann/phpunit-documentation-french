@@ -6,6 +6,28 @@ La documentation est accessible à l'adresse https://phpunit.readthedocs.io/fr/l
 
 La documentation originale en anglais : https://github.com/sebastianbergmann/phpunit-documentation-english
 
+# Traductions
+
+Chaque traduction de la documentation est maintenue dans un dépôt 
+dédié:
+
+* [Documentation en anglais](https://github.com/sebastianbergmann/phpunit-documentation-english)
+* [Documentation en espagnol](https://github.com/sebastianbergmann/phpunit-documentation-spanish)
+* [Documentation en français](https://github.com/sebastianbergmann/phpunit-documentation-french)
+* [Documentation en brésilien et portuguais](https://github.com/sebastianbergmann/phpunit-documentation-brazilian-portuguese)
+* [Documentation en japonais](https://github.com/sebastianbergmann/phpunit-documentation-japanese)
+* [Documentation en chinois simplifié](https://github.com/sebastianbergmann/phpunit-documentation-chinese)
+
+## Ajouter une nouvelle traduction
+
+Si vous souhaitez créer une nouvelle traduction, merci d'ouvrir une issue sur le
+tracker de la documentation anglaise, indiquant la langue que vous souhaitez 
+traduire. Un dépôt sera créé et ajouté aux traductions disponibles.
+
+Idéalement, vous aurez déjà préparé une première version basée sur un fork ou
+une copie de la documentation anglaise qui sera ensuite importée dans le
+dépôt officiel.
+
 ## Construire la documentation
 
 ### Pré-requis
