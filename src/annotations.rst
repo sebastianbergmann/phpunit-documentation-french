@@ -773,6 +773,13 @@ L'annotation ``@testdox`` peut être appliqué aux classes de tests et aux méth
 Au lieu d'implémenter une méthode à utiliser avec ``@dataProvider``,
 vous pouvez définir un jeu de données en utilisant l'annotation ``@testWith``.
 
+Un jeu de données comprend un ou plusieurs éléments. Pour définir un jeu de données
+avec plusieurs éléments, définissez chaque élément dans une ligne distincte.
+Chaque élément de l'ensemble de données doit être un tableau défini en JSON.
+
+Voir :ref:`writing-tests-for-phpunit.data-providers` pour en apprendre
+plus sur comment passer un jeu de données à un test.
+
 .. code-block:: php
 
     /**
@@ -785,6 +792,21 @@ vous pouvez définir un jeu de données en utilisant l'annotation ``@testWith``.
     public function testStringLength(string $input, int $expectedLength)
     {
         $this->assertSame($expectedLength, strlen($input));
+    }
+
+La représentation d'un objet en JSON sera convertie en tableau associatif.
+
+.. code-block:: php
+
+    /**
+     * @param array     $array
+     * @param array     $keys
+     *
+     * @testWith        [{"day": "monday", "conditions": "sunny"}, ["day", "conditions"]]
+     */
+    public function testArrayKeys($array, $keys)
+    {
+        $this->assertSame($keys, array_keys($array));
     }
 
 .. _appendixes.annotations.ticket:
