@@ -17,7 +17,7 @@ Analyse de couverture de code
 Dans ce chapitre, vous apprendrez tout sur la fonctionnalité de couverture
 de code de PHPUnit qui fournit une vision interne des parties du code de
 production qui sont exécutées quand les tests sont exécutés. Elle utilise le composant
-`PHP_CodeCoverage <https://github.com/sebastianbergmann/php-code-coverage>`_
+`php-code-coverage <https://github.com/sebastianbergmann/php-code-coverage>`_
 qui tire parti de la fonctionnalité de couverture de code fournie par l'extension
 `Xdebug <http://xdebug.org/>`_ de PHP.
 
@@ -55,14 +55,14 @@ Différents indicateurs logiciels existent pour mesurer la couverture de code :
 
     L'indicateur logiciel de *couverture de fonction et de méthode*
     mesure si chaque fonction ou méthode a été invoquée.
-    PHP_CodeCoverage considère qu'une fonction ou une méthode a été couverte
+    php-code-coverage considère qu'une fonction ou une méthode a été couverte
     seulement quand toutes ses lignes exécutables sont couvertes.
 
 *Couverture de classe et de trait*
 
     L'indicateur logiciel de *couverture de classe et de trait*
     mesure si chaque méthode d'une classe ou d'un trait est couverte.
-    PHP_CodeCoverage considère qu'une classe ou un trait est couvert
+    php-code-coverage considère qu'une classe ou un trait est couvert
     seulement quand toutes ses méthodes sont couvertes.
 
 *Couverture d'opcode*
@@ -102,7 +102,7 @@ Différents indicateurs logiciels existent pour mesurer la couverture de code :
    Les indicateurs logiciel de *Couverture d'Opcode*,
    *Couverture de branche* et de
    *Couverture de chemin* ne sont pas encore
-   supportés par PHP_CodeCoverage.
+   supportés par php-code-coverage.
 
 .. _code-coverage-analysis.whitelisting-files:
 
