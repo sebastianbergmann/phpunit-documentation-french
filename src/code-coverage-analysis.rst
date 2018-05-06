@@ -23,8 +23,8 @@ qui tire parti de la fonctionnalité de couverture de code fournie par l'extensi
 
 .. admonition:: Note
 
-   Xdebug n'est pas distribué au sein de PHPUnit. Si une notice indiquant que
-   l'extension Xdebug n'est pas chargé en lançant les tests, cela signifie que
+   Xdebug n'est pas distribué au sein de PHPUnit. Si une notice indiquant 
+   qu'aucun pilote de couverture de code n'est disponible en lançant les tests, cela signifie que
    Xdebug n'est pas installé ou n'est pas configuré correctement. Avant de pouvoir
    utiliser les fonctionnalités de couverture de code dans PHPUnit, vous devez lire
    `le guide d'installation de Xdebug. <https://xdebug.org/docs/install>`_.
