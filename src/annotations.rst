@@ -356,7 +356,7 @@ et sera surchargée par toute étiquette ``@covers``.
 #############
 
 Une méthode de test peut accepter des paramètres arbitraires. Ces paramètres
-peuvent être fournis pas une méthode fournisseuse de données ((``provider()`` dans
+peuvent être fournis par une ou plusieurs méthodes fournisseuses de données ((``provider()`` dans
 :ref:`writing-tests-for-phpunit.data-providers.examples.DataTest.php`).
 La méthode fournisseur de données peut être indiquée en utilisant l'annotation
 ``@dataProvider``.
