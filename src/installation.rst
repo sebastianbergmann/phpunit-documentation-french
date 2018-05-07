@@ -11,7 +11,7 @@ Installer PHPUnit
 Pré-requis
 ##########
 
-PHPUnit 7.0 nécessite PHP 7; utiliser la dernière version de PHP est fortement
+PHPUnit |version| nécessite PHP 7; utiliser la dernière version de PHP est fortement
 recommandé.
 
 PHPUnit nécessite les extensions `dom <http://php.net/manual/en/dom.setup.php>`_ et `json <http://php.net/manual/en/json.installation.php>`_
@@ -54,9 +54,9 @@ Pour installer le PHAR de manière globale :
 
 .. code-block:: bash
 
-    $  wget https://phar.phpunit.de/phpunit-7.0.phar
-    $  chmod +x phpunit-7.0.phar
-    $  sudo mv phpunit-7.0.phar /usr/local/bin/phpunit
+    $  wget https://phar.phpunit.de/phpunit-|version|.phar
+    $  chmod +x phpunit-|version|.phar
+    $  sudo mv phpunit-|version|.phar /usr/local/bin/phpunit
     $  phpunit --version
     PHPUnit x.y.z by Sebastian Bergmann and contributors.
 
@@ -64,8 +64,8 @@ Vous pouvez également utiliser directement le fichier PHAR téléchargé:
 
 .. code-block:: bash
 
-    $  wget https://phar.phpunit.de/phpunit-7.0.phar
-    $  php phpunit-7.0.phar --version
+    $  wget https://phar.phpunit.de/phpunit-|version|.phar
+    $  php phpunit-|version|.phar --version
     PHPUnit x.y.z by Sebastian Bergmann and contributors.
 
 .. _installation.phar.windows:
@@ -88,7 +88,7 @@ L'installation globale du PHAR implique la même procédure que l'installation
 
 #.
 
-   Télécharger `<https://phar.phpunit.de/phpunit-7.0.phar>`_ et
+   Télécharger `<https://phar.phpunit.de/phpunit-|version|.phar>`_ et
    sauvegarder le fichier sous :file:`C:\\bin\\phpunit.phar`
 
 #.
@@ -272,7 +272,7 @@ dépendances de votre projet :
 
 .. code-block:: bash
 
-    composer require --dev phpunit/phpunit ^7.0
+    composer require --dev phpunit/phpunit ^|version|
 
 .. _installation.optional-packages:
 

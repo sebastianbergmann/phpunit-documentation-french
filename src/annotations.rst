@@ -759,7 +759,7 @@ L'annotation ``@testdox`` peut être appliqué aux classes de tests et aux méth
 
 .. admonition:: Note
 
-    Avant PHPUnit 7.0 (en raison d'un bug dans l'analyse des annotations), utiliser
+    Avant PHPUnit |version| (en raison d'un bug dans l'analyse des annotations), utiliser
     l'annotation ``@testdox`` active aussi le comportement
     de l'annotation ``@test``.
 

@@ -154,7 +154,7 @@ dans une classe de cas de test.
 .. code-block:: bash
 
     $ phpunit TemplateMethodsTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     TemplateMethodsTest::setUpBeforeClass
     TemplateMethodsTest::setUp
