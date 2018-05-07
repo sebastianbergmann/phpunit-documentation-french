@@ -177,7 +177,7 @@ localisation des défauts en exploitant les dépendances entre les tests comme m
 .. code-block:: bash
 
     $ phpunit --verbose DependencyFailureTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     FS
 
@@ -243,7 +243,7 @@ Voir :numref:`writing-tests-for-phpunit.examples.MultipleDependencies.php`
 .. code-block:: bash
 
     $ phpunit --verbose MultipleDependenciesTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...
 
@@ -299,7 +299,7 @@ du tableau.
 .. code-block:: bash
 
     $ phpunit DataTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...F
 
@@ -349,7 +349,7 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
 .. code-block:: bash
 
     $ phpunit DataTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...F
 
@@ -393,7 +393,7 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
 .. code-block:: bash
 
     $ phpunit DataTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...F
 
@@ -503,7 +503,7 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
 .. code-block:: bash
 
     $ phpunit --verbose DependencyAndDataProviderComboTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...F
 
@@ -566,7 +566,7 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
 
 .. code-block:: bash
     $ phpunit DataTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ..F...                                                              6 / 6 (100%)
 
@@ -624,7 +624,7 @@ si une exception est levée par le code testé.
 .. code-block:: bash
 
     $ phpunit ExceptionTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
@@ -678,7 +678,7 @@ montre un exemple.
 .. code-block:: bash
 
     $ phpunit ExceptionTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
@@ -730,7 +730,7 @@ PHP comme montré dans :numref:`writing-tests-for-phpunit.exceptions.examples.Er
 .. code-block:: bash
 
     $ phpunit -d error_reporting=2 ExpectedErrorTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     .
 
@@ -789,7 +789,7 @@ en supprimant les remarques qui auraient conduit à une
 .. code-block:: bash
 
     $ phpunit ErrorSuppressionTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     .
 
@@ -842,7 +842,7 @@ sera compté comme étant en échec.
 .. code-block:: bash
 
     $ phpunit OutputTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     .F
 
@@ -912,7 +912,7 @@ de contexte possible pour identifier le problème.
 .. code-block:: bash
 
     $ phpunit ArrayDiffTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
@@ -966,7 +966,7 @@ et fournira quelques lignes de contexte autour de chaque différence.
 .. code-block:: bash
 
     $ phpunit LongArrayDiffTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
@@ -1026,7 +1026,7 @@ de comparaison "faible" sur les tableaux ou les objets.
 .. code-block:: bash
 
     $ phpunit ArrayWeakComparisonTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
