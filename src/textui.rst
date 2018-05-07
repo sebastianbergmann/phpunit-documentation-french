@@ -340,9 +340,9 @@ dans le code suivant :
     Exécute seulement les tests appartenant à un/des groupe(s) indiqué(s). Un test
     peut être signalé comme appartenant à un groupe en utilisant l'annotation ``@group``.
 
-    L'annotation ``@author`` est un alias pour
+    Les annotations ``@author`` et ``@ticket`` sont des alias pour
     ``@group`` permettant de filtrer les tests en se basant
-    sur leurs auteurs.
+    respectivement sur leurs auteurs ou sur leurs identifiants de tickets.
 
 ``--exclude-group``
 
