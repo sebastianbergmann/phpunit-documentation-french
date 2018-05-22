@@ -19,7 +19,7 @@ de code de PHPUnit qui fournit une vision interne des parties du code de
 production qui sont exécutées quand les tests sont exécutés. Elle utilise le composant
 `PHP_CodeCoverage <https://github.com/sebastianbergmann/php-code-coverage>`_
 qui tire parti de la fonctionnalité de couverture de code fournie par l'extension
-`Xdebug <http://xdebug.org/>`_ de PHP.
+`Xdebug <https://xdebug.org/>`_ de PHP.
 
 .. admonition:: Note
 
@@ -27,7 +27,7 @@ qui tire parti de la fonctionnalité de couverture de code fournie par l'extensi
    l'extension Xdebug n'est pas chargé en lançant les tests, cela signifie que
    Xdebug n'est pas installé ou n'est pas configuré correctement. Avant de pouvoir
    utiliser les fonctionnalités de couverture de code dans PHPUnit, vous devez lire
-   `le guide d'installation de Xdebug. <http://xdebug.org/docs/install>`_.
+   `le guide d'installation de Xdebug. <https://xdebug.org/docs/install>`_.
 
 PHPUnit peut générer un rapport de couverture de code HTML aussi bien que
 des fichiers de log en XML avec les informations de couverture de code dans différents formats
