@@ -29,6 +29,9 @@ qui tire parti de la fonctionnalité de couverture de code fournie par l'extensi
    utiliser les fonctionnalités de couverture de code dans PHPUnit, vous devez lire
    `le guide d'installation de Xdebug. <http://xdebug.org/docs/install>`_.
 
+php-code-coverage prend également en charge `phpdbg <https://phpdbg.room11.org/introduction.html>`_
+comme source alternative pour les données de couverture de code.
+
 PHPUnit peut générer un rapport de couverture de code HTML aussi bien que
 des fichiers de log en XML avec les informations de couverture de code dans différents formats
 (Clover, Crap4J, PHPUnit). Les informations de couverture de code peuvent aussi être rapportées
