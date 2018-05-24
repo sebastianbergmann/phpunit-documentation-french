@@ -258,7 +258,7 @@ que votre application n'a pas besoin de s'appuyer sur PDO pour utiliser
 l'extension de base de données de PHPUnit, la connexion est
 principalement utilisée pour le nettoyage et la configuration de setup.
 
-Dans l'exemple précédent, nous avons créé une connexion Sqlite en mémoire
+Dans l'exemple précédent, nous avons créé une connexion SQLite en mémoire
 et nous l'avons passé à la méthode ``createDefaultDBConnection``
 qui encapsule l'instance PDO et le second paramètre (le
 nom de la base de données) dans une couche d'abstraction très simple pour connexion
@@ -305,7 +305,7 @@ au test de base de données.
 
 #.
 
-   Si vous utilisez une base de données persistante (pas Sqlite en mémoire) vous pouvez
+   Si vous utilisez une base de données persistante (pas SQLite en mémoire) vous pouvez
    facilement configure la base de données avec des outils tels que phpMyAdmin pour
    MySQL et réutiliser la base de données pour chaque exécution de test.
 
@@ -507,7 +507,7 @@ DataSet en XML à plat
 ---------------------
 
 Le dataset le plus commun est appelé XML à plat (flat XML). C'est un format
-xml très simple dans lequel une balise à l'intérieur d'un noeud racine
+XML très simple dans lequel une balise à l'intérieur d'un noeud racine
 ``<dataset>`` représente exactement une ligne de la base
 de données. Les noms des balises sont ceux des tables dans lesquelles insérer les
 lignes et un attribut représente la colonne. Un exemple pour une simple application
@@ -661,7 +661,7 @@ Les balises ``<value>`` et
 La balise ``<null />`` signifie évidemment que la
 valeur est NULL.
 
-Vous pouvez créer une instance de dataset xml dans votre
+Vous pouvez créer une instance de dataset XML dans votre
 cas de test de base de données en appelant la méthode
 ``createXmlDataSet($filename)`` :
 
@@ -1277,9 +1277,9 @@ qui doit être retournée par la méthode
 
     interface Connection
     {
-        public function createDataSet(Array $tableNames = NULL);
+        public function createDataSet(array $tableNames = null);
         public function createQueryTable($resultName, $sql);
-        public function getRowCount($tableName, $whereClause = NULL);
+        public function getRowCount($tableName, $whereClause = null);
 
         // ...
     }
