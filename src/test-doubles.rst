@@ -84,8 +84,6 @@ comme montré dans l'exemple. Ceci amène à un code plus lisible et "souple".
     :name: test-doubles.stubs.examples.SomeClass.php
 
     <?php
-    use PHPUnit\Framework\TestCase;
-
     class SomeClass
     {
         public function doSomething()
