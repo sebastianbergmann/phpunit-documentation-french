@@ -416,38 +416,46 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
     <?php
     use PHPUnit\Framework\TestCase;
 
-    class CsvFileIterator implements Iterator {
+    class CsvFileIterator implements Iterator
+    {
         protected $file;
         protected $key = 0;
         protected $current;
 
-        public function __construct($file) {
+        public function __construct($file)
+        {
             $this->file = fopen($file, 'r');
         }
 
-        public function __destruct() {
+        public function __destruct()
+        {
             fclose($this->file);
         }
 
-        public function rewind() {
+        public function rewind()
+        {
             rewind($this->file);
             $this->current = fgetcsv($this->file);
             $this->key = 0;
         }
 
-        public function valid() {
+        public function valid()
+        {
             return !feof($this->file);
         }
 
-        public function key() {
+        public function key()
+        {
             return $this->key;
         }
 
-        public function current() {
+        public function current()
+        {
             return $this->current;
         }
 
-        public function next() {
+        public function next()
+        {
             $this->current = fgetcsv($this->file);
             $this->key++;
         }
@@ -765,7 +773,8 @@ en supprimant les remarques qui auraient conduit à une
 
     class ErrorSuppressionTest extends TestCase
     {
-        public function testFileWriting() {
+        public function testFileWriting()
+        {
             $writer = new FileWriter;
 
             $this->assertFalse(@$writer->write('/is-not-writeable/file', 'stuff'));
@@ -774,10 +783,11 @@ en supprimant les remarques qui auraient conduit à une
 
     class FileWriter
     {
-        public function write($file, $content) {
+        public function write($file, $content)
+        {
             $file = fopen($file, 'w');
 
-            if($file == false) {
+            if ($file == false) {
                 return false;
             }
 
@@ -901,7 +911,8 @@ de contexte possible pour identifier le problème.
 
     class ArrayDiffTest extends TestCase
     {
-        public function testEquality() {
+        public function testEquality()
+        {
             $this->assertSame(
                 [1, 2,  3, 4, 5, 6],
                 [1, 2, 33, 4, 5, 6]
@@ -955,7 +966,8 @@ et fournira quelques lignes de contexte autour de chaque différence.
 
     class LongArrayDiffTest extends TestCase
     {
-        public function testEquality() {
+        public function testEquality()
+        {
             $this->assertSame(
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2,  3, 4, 5, 6],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 33, 4, 5, 6]
@@ -1015,7 +1027,8 @@ de comparaison "faible" sur les tableaux ou les objets.
 
     class ArrayWeakComparisonTest extends TestCase
     {
-        public function testEquality() {
+        public function testEquality()
+        {
             $this->assertEquals(
                 [1, 2, 3, 4, 5, 6],
                 ['1', 2, 33, 4, 5, 6]
