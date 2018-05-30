@@ -814,7 +814,9 @@ La représentation d'un objet en JSON sera convertie en tableau associatif.
 @ticket
 #######
 
-.. code-block:: php
+L'annotation ``@ticket`` est un alias pour l'annotation
+``@group``  (voir :ref:`appendixes.annotations.group`) et permet de filtrer des tests selon
+leurs identifiants de tickets.
 
 .. _appendixes.annotations.uses:
 
