@@ -117,14 +117,15 @@ PHPUnit quels fichiers de code source inclure dans le rapport de couverture de c
 Cela peut être fait en utilisant l'option de ligne de commande ``--whitelist``
 ou via le fichier de configuration (voir :ref:`appendixes.configuration.whitelisting-files`).
 
-Optionnellement, tous les fichiers en liste blanche peuvent être ajoutés au rapport
-de couverture de code en paramétrant ``addUncoveredFilesFromWhitelist="true"``
-dans votre fichier de configuration PHPUnit (voir :ref:`appendixes.configuration.whitelisting-files`). Cela autorise
-l'inclusion de fichiers qui ne sont pas encore testés du tout. Si vous voulez avoir des
-information sur quelles lignes d'un fichier non couvert sont exécutables,
-par exemple, vous devez également définir
-``processUncoveredFilesFromWhitelist="true"`` dans votre
-fichier de configuration PHPUnit (voir :ref:`appendixes.configuration.whitelisting-files`).
+The ``addUncoveredFilesFromWhitelist`` and ``processUncoveredFilesFromWhitelist`` configuration settings are available to configure how the whitelist is used:
+
+- ``addUncoveredFilesFromWhitelist="false"`` means that only whitelisted files that have a least one of line of executed code are included in the code coverage report
+
+- ``addUncoveredFilesFromWhitelist="true"`` (default) means that all whitelisted files are included in the code coverage report even if not a single line of code of such a file is executed
+
+- ``processUncoveredFilesFromWhitelist="false"`` (default) means that a whitelisted file that has no executed lines of code will be added to the code coverage report (if ``addUncoveredFilesFromWhitelist="true"`` is set) but it will not be loaded by PHPUnit and it will therefore not be analysed for correct executable lines of code information
+
+- ``processUncoveredFilesFromWhitelist="true"`` means that a whitelisted file that has no executed lines of code will be loaded by PHPUnit so that it can be analysed for correct executable lines of code information
 
 .. admonition:: Note
 
