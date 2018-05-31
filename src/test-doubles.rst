@@ -47,7 +47,7 @@ retourner une valeur donnée quand elles sont appelées.
 
 .. admonition:: Limitations: méthodes final, private et static
 
-   Merci de noter que les méthodes ``final``, ``private``,
+   Veuillez noter que les méthodes ``final``, ``private``,
    ``protected`` et ``static`` ne peuvent pas être remplacées
    par un bouchon (stub) ou un mock. Elles seront ignorées par la
    fonction de doublure de test de PHPUnit et conserveront leur comportement initial sauf pour
@@ -123,7 +123,7 @@ comme montré dans l'exemple. Ceci amène à un code plus lisible et "souple".
 .. admonition:: Limitation: Méthodes nommées "method"
 
    L'exemple ci-dessus ne fonctionne que si la classe originale ne déclare
-   pas de méthode appelé "method".
+   pas de méthode appelée "method".
 
    Si la classe originale déclare une methode appelée "method" alors vous devez utiliser ``$stub->expects($this->any())->method('doSomething')->willReturn('foo');``.
 
@@ -303,7 +303,7 @@ d'une fonction ou méthode de rappel. Voir
     }
     ?>
 
-Une alternative plus simple pour configurer une méthode de rappel peut
+Une alternative plus simple à la configuration d'une méthode de rappel peut
 consister à indiquer une liste de valeurs désirées. Vous pouvez faire
 ceci avec la méthode ``onConsecutiveCalls()``. Voir
 :numref:`test-doubles.stubs.examples.StubTest7.php` pour
