@@ -316,4 +316,61 @@ et la seconde valeur celle constatée.
     FAILURES!
     Tests: 2, Failures: 1.
 
+.. _extending-phpunit.TestRunner:
+
+Etendre le TestRunner
+#####################
+
+PHPUnit |version| prend en charge les extensions TestRunner, qui peuvent se connecter
+à divers événements pendant l'exécution du test.
+Voir :ref:`appendixes.configuration.extensions` pour plus de détails sur la façon 
+d'enregistrer les extensions dans la configuration XML de PHPUnit.
+
+Chaque événement disponible auquel l'extension peut se connecter est représenté par une 
+interface que l'extension doit implémenter.
+:ref:`extending-phpunit.hooks` liste les événements disponibles dans
+PHPUnit |version|.
+
+.. _extending-phpunit.hooks:
+
+Interfaces disponibles
+----------------------
+
+- ``AfterIncompleteTestHook``
+- ``AfterLastTestHook``
+- ``AfterRiskyTestHook``
+- ``AfterSkippedTestHook``
+- ``AfterSuccessfulTestHook``
+- ``AfterTestErrorHook``
+- ``AfterTestFailureHook``
+- ``AfterTestWarningHook``
+- ``BeforeFirstTestHook``
+- ``BeforeTestHook``
+
+:numref:`extending-phpunit.examples.TestRunnerExtension` montre un exemple 
+d'une extension implémentant ``BeforeFirstTestHook`` et ``AfterLastTestHook`` :
+
+.. code-block:: php
+    :caption: Exemple d'extension TestRunner
+    :name: extending-phpunit.examples.TestRunnerExtension
+
+        <?php
+
+        namespace Vendor;
+
+        use PHPUnit\Runner\AfterLastTestHook;
+        use PHPUnit\Runner\BeforeFirstTestHook;
+
+        final class MyExtension implements BeforeFirstTestHook, AfterLastTestHook
+        {
+            public function executeAfterLastTest(): void
+            {
+                // called after the last test has been run
+            }
+
+            public function executeBeforeFirstTest(): void
+            {
+                // called before the first test is being run
+            }
+        }
 

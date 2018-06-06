@@ -332,6 +332,28 @@ La configuration XML ci-dessus revient à brancher l'objet
         new stdClass
     );
 
+.. _appendixes.configuration.extensions:
+
+Enregistrer des extensions TestRunner
+#####################################
+
+L'élément ``<extensions>`` et ses enfants ``<extension>``
+peuvent être utilisés pour enregistrer des extensions TestRunner personnalisées.
+
+:numref:`configuration.examples.RegisterExtension` montre comment enregistrer
+une telle extension.
+
+.. code-block:: xml
+    :caption: Enregistrer une extension TestRunner
+    :name: configuration.examples.RegisterExtension
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.1/phpunit.xsd">
+          <extensions>
+              <extension class="Vendor\MyExtension"/>
+          </extensions>
+      </phpunit>
+
 .. _appendixes.configuration.php-ini-constants-variables:
 
 Configurer les réglages de PHP INI, les constantes et les variables globales
