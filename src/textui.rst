@@ -13,7 +13,7 @@ des tests avec le lanceur de tests en ligne de commandes de PHPUnit:
 .. code-block:: bash
 
     $ phpunit ArrayTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ..
 
@@ -76,7 +76,7 @@ dans le code suivant :
 .. code-block:: bash
 
     $ phpunit --help
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     Usage: phpunit [options] UnitTest [UnitTest.php]
            phpunit [options] <directory>
@@ -543,7 +543,7 @@ Jetons un oeil sur la documentation agile générée pour la classe
 .. code-block:: bash
 
     $ phpunit --testdox BankAccountTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     BankAccount
       ✔ Balance is initially zero

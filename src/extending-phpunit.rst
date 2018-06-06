@@ -297,7 +297,7 @@ et la seconde valeur celle constatée.
 
 .. code-block:: bash
 
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     .F
 
