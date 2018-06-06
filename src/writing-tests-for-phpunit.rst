@@ -177,7 +177,7 @@ localisation des défauts en exploitant les dépendances entre les tests comme m
 .. code-block:: bash
 
     $ phpunit --verbose DependencyFailureTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     FS
 
@@ -243,7 +243,7 @@ Voir :numref:`writing-tests-for-phpunit.examples.MultipleDependencies.php`
 .. code-block:: bash
 
     $ phpunit --verbose MultipleDependenciesTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...
 
@@ -257,7 +257,7 @@ Fournisseur de données
 ######################
 
 Une méthode de test peut recevoir des arguments arbitraires. Ces arguments doivent
-être fournis par une méthode fournisseuse de données (``additionProvider()`` dans
+être fournis par une ou plusieurs méthodes fournisseuses de données (``additionProvider()`` dans
 :numref:`writing-tests-for-phpunit.data-providers.examples.DataTest.php`).
 La méthode fournisseuse de données à utiliser est indiquée dans l'annotation
 ``@dataProvider``.
@@ -299,7 +299,7 @@ du tableau.
 .. code-block:: bash
 
     $ phpunit DataTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...F
 
@@ -349,7 +349,7 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
 .. code-block:: bash
 
     $ phpunit DataTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...F
 
@@ -393,7 +393,7 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
 .. code-block:: bash
 
     $ phpunit DataTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...F
 
@@ -503,7 +503,7 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
 .. code-block:: bash
 
     $ phpunit --verbose DependencyAndDataProviderComboTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     ...F
 
@@ -526,6 +526,61 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
 
     FAILURES!
     Tests: 4, Assertions: 4, Failures: 1.
+
+.. code-block:: php
+    :caption: Using multiple data providers for a single test
+      :name: writing-tests-for-phpunit.data-providers.examples.DataTest.php
+
+      <?php
+      use PHPUnit\Framework\TestCase;
+
+      class DataTest extends TestCase
+      {
+          /**
+           * @dataProvider additionWithNonNegativeNumbersProvider
+           * @dataProvider additionWithNegativeNumbersProvider
+           */
+          public function testAdd($a, $b, $expected)
+          {
+              $this->assertSame($expected, $a + $b);
+          }
+
+          public function additionWithNonNegativeNumbersProvider()
+          {
+              return [
+                  [0, 1, 1],
+                  [1, 0, 1],
+                  [1, 1, 3]
+              ];
+          }
+
+          public function additionWithNegativeNumbersProvider()
+          {
+              return [
+                  [-1, 1, 0],
+                  [-1, -1, -2],
+                  [1, -1, 0]
+              ];
+          }
+       }
+
+.. code-block:: bash
+    $ phpunit DataTest
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
+
+    ..F...                                                              6 / 6 (100%)
+
+    Time: 0 seconds, Memory: 5.75Mb
+
+    There was 1 failure:
+
+    1) DataTest::testAdd with data set #3 (1, 1, 3)
+    Failed asserting that 2 is identical to 3.
+
+    /home/sb/DataTest.php:12
+
+    FAILURES!
+    Tests: 6, Assertions: 6, Failures: 1.
 
 .. admonition:: Note
 
@@ -569,7 +624,7 @@ si une exception est levée par le code testé.
 .. code-block:: bash
 
     $ phpunit ExceptionTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
@@ -623,7 +678,7 @@ montre un exemple.
 .. code-block:: bash
 
     $ phpunit ExceptionTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
@@ -675,7 +730,7 @@ PHP comme montré dans :numref:`writing-tests-for-phpunit.exceptions.examples.Er
 .. code-block:: bash
 
     $ phpunit -d error_reporting=2 ExpectedErrorTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     .
 
@@ -734,7 +789,7 @@ en supprimant les remarques qui auraient conduit à une
 .. code-block:: bash
 
     $ phpunit ErrorSuppressionTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     .
 
@@ -787,7 +842,7 @@ sera compté comme étant en échec.
 .. code-block:: bash
 
     $ phpunit OutputTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     .F
 
@@ -857,7 +912,7 @@ de contexte possible pour identifier le problème.
 .. code-block:: bash
 
     $ phpunit ArrayDiffTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
@@ -911,7 +966,7 @@ et fournira quelques lignes de contexte autour de chaque différence.
 .. code-block:: bash
 
     $ phpunit LongArrayDiffTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 
@@ -971,7 +1026,7 @@ de comparaison "faible" sur les tableaux ou les objets.
 .. code-block:: bash
 
     $ phpunit ArrayWeakComparisonTest
-    PHPUnit 7.0.0 by Sebastian Bergmann and contributors.
+    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
     F
 

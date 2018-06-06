@@ -45,7 +45,7 @@ pointer le lanceur de tests en ligne de commandes de PHPUnit sur ce répertoire 
 .. code-block:: bash
 
     $ phpunit --bootstrap src/autoload.php tests
-    PHPUnit 7.0.0 by Sebastian Bergmann.
+    PHPUnit |version|.0 by Sebastian Bergmann.
 
     .................................
 
@@ -65,7 +65,7 @@ nous pouvons utiliser la commande suivante :
 .. code-block:: bash
 
     $ phpunit --bootstrap src/autoload.php tests/CurrencyTest
-    PHPUnit 7.0.0 by Sebastian Bergmann.
+    PHPUnit |version|.0 by Sebastian Bergmann.
 
     ........
 
@@ -79,7 +79,7 @@ l'option ``--filter`` :
 .. code-block:: bash
 
     $ phpunit --bootstrap src/autoload.php --filter testObjectCanBeConstructedForValidConstructorArgument tests
-    PHPUnit 7.0.0 by Sebastian Bergmann.
+    PHPUnit |version|.0 by Sebastian Bergmann.
 
     ..
 

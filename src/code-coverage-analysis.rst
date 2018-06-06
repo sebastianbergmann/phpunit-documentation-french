@@ -17,17 +17,20 @@ Analyse de couverture de code
 Dans ce chapitre, vous apprendrez tout sur la fonctionnalité de couverture
 de code de PHPUnit qui fournit une vision interne des parties du code de
 production qui sont exécutées quand les tests sont exécutés. Elle utilise le composant
-`PHP_CodeCoverage <https://github.com/sebastianbergmann/php-code-coverage>`_
+`php-code-coverage <https://github.com/sebastianbergmann/php-code-coverage>`_
 qui tire parti de la fonctionnalité de couverture de code fournie par l'extension
-`Xdebug <http://xdebug.org/>`_ de PHP.
+`Xdebug <https://xdebug.org/>`_ de PHP.
 
 .. admonition:: Note
 
-   Xdebug n'est pas distribué au sein de PHPUnit. Si une notice indiquant que
-   l'extension Xdebug n'est pas chargé en lançant les tests, cela signifie que
+   Xdebug n'est pas distribué au sein de PHPUnit. Si une notice indiquant 
+   qu'aucun pilote de couverture de code n'est disponible en lançant les tests, cela signifie que
    Xdebug n'est pas installé ou n'est pas configuré correctement. Avant de pouvoir
    utiliser les fonctionnalités de couverture de code dans PHPUnit, vous devez lire
-   `le guide d'installation de Xdebug. <http://xdebug.org/docs/install>`_.
+   `le guide d'installation de Xdebug. <https://xdebug.org/docs/install>`_.
+
+   php-code-coverage prend également en charge `phpdbg <https://phpdbg.room11.org/introduction.html>`_
+   comme source alternative pour les données de couverture de code.
 
 PHPUnit peut générer un rapport de couverture de code HTML aussi bien que
 des fichiers de log en XML avec les informations de couverture de code dans différents formats
@@ -55,14 +58,14 @@ Différents indicateurs logiciels existent pour mesurer la couverture de code :
 
     L'indicateur logiciel de *couverture de fonction et de méthode*
     mesure si chaque fonction ou méthode a été invoquée.
-    PHP_CodeCoverage considère qu'une fonction ou une méthode a été couverte
+    php-code-coverage considère qu'une fonction ou une méthode a été couverte
     seulement quand toutes ses lignes exécutables sont couvertes.
 
 *Couverture de classe et de trait*
 
     L'indicateur logiciel de *couverture de classe et de trait*
     mesure si chaque méthode d'une classe ou d'un trait est couverte.
-    PHP_CodeCoverage considère qu'une classe ou un trait est couvert
+    php-code-coverage considère qu'une classe ou un trait est couvert
     seulement quand toutes ses méthodes sont couvertes.
 
 *Couverture d'opcode*
@@ -102,7 +105,7 @@ Différents indicateurs logiciels existent pour mesurer la couverture de code :
    Les indicateurs logiciel de *Couverture d'Opcode*,
    *Couverture de branche* et de
    *Couverture de chemin* ne sont pas encore
-   supportés par PHP_CodeCoverage.
+   supportés par php-code-coverage.
 
 .. _code-coverage-analysis.whitelisting-files:
 
@@ -114,14 +117,15 @@ PHPUnit quels fichiers de code source inclure dans le rapport de couverture de c
 Cela peut être fait en utilisant l'option de ligne de commande ``--whitelist``
 ou via le fichier de configuration (voir :ref:`appendixes.configuration.whitelisting-files`).
 
-Optionnellement, tous les fichiers en liste blanche peuvent être ajoutés au rapport
-de couverture de code en paramétrant ``addUncoveredFilesFromWhitelist="true"``
-dans votre fichier de configuration PHPUnit (voir :ref:`appendixes.configuration.whitelisting-files`). Cela autorise
-l'inclusion de fichiers qui ne sont pas encore testés du tout. Si vous voulez avoir des
-information sur quelles lignes d'un fichier non couvert sont exécutables,
-par exemple, vous devez également définir
-``processUncoveredFilesFromWhitelist="true"`` dans votre
-fichier de configuration PHPUnit (voir :ref:`appendixes.configuration.whitelisting-files`).
+The ``addUncoveredFilesFromWhitelist`` and ``processUncoveredFilesFromWhitelist`` configuration settings are available to configure how the whitelist is used:
+
+- ``addUncoveredFilesFromWhitelist="false"`` means that only whitelisted files that have a least one of line of executed code are included in the code coverage report
+
+- ``addUncoveredFilesFromWhitelist="true"`` (default) means that all whitelisted files are included in the code coverage report even if not a single line of code of such a file is executed
+
+- ``processUncoveredFilesFromWhitelist="false"`` (default) means that a whitelisted file that has no executed lines of code will be added to the code coverage report (if ``addUncoveredFilesFromWhitelist="true"`` is set) but it will not be loaded by PHPUnit and it will therefore not be analysed for correct executable lines of code information
+
+- ``processUncoveredFilesFromWhitelist="true"`` means that a whitelisted file that has no executed lines of code will be loaded by PHPUnit so that it can be analysed for correct executable lines of code information
 
 .. admonition:: Note
 
