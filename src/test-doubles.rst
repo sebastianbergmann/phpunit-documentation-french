@@ -33,7 +33,8 @@ originelle est attendue ou requise.
 
 La méthode ``createMock($type)`` retourne immédiatement une doublure de
 test pour le type spécifié (interface ou classe). La création de cette doublure est
-effectuée en suivant par défaut les bonnes pratiques (les méthodes ``__construct()`` et ``__clone()`` de la classe originale ne sont pas exécutées
+effectuée en suivant par défaut les bonnes pratiques. 
+Les méthodes ``__construct()`` et ``__clone()`` de la classe originale ne sont pas exécutées
 et les arguments passés à une méthode de la doublure de tests ne sont pas clonés. Si ce
 comportement par défaut ne correspond pas à ce dont vous avez besoin vous pouvez
 alors utiliser la méthode ``getMockBuilder($type)`` pour personnaliser la
