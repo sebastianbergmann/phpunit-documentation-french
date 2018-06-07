@@ -93,7 +93,7 @@ comme montré dans l'exemple. Ceci amène à un code plus lisible et "souple".
             // Do something.
         }
     }
-    ?>
+
 
 .. code-block:: php
     :caption: Bouchonner un appel de méthode pour retourner une valeur fixée
@@ -118,7 +118,7 @@ comme montré dans l'exemple. Ceci amène à un code plus lisible et "souple".
             $this->assertSame('foo', $stub->doSomething());
         }
     }
-    ?>
+
 
 .. admonition:: Limitation: Méthodes nommées "method"
 
@@ -164,7 +164,7 @@ utilise les même bonnes pratiques utilisées par défaut par ``createMock()``.
             $this->assertSame('foo', $stub->doSomething());
         }
     }
-    ?>
+
 
 Dans les exemples précédents, nous avons retourné des valeurs simple en utilisant
 ``willReturn($value)``. Cette syntaxe courte est identique à
@@ -202,7 +202,7 @@ pouvez obtenir ceci en utilisant ``returnArgument()`` à la place de
             $this->assertSame('bar', $stub->doSomething('bar'));
         }
     }
-    ?>
+
 
 Quand on teste interface souple, il est parfois utile que la méthode bouchon
 retourne une référence à l'objet bouchon.
@@ -231,7 +231,7 @@ utiliser ``returnSelf()`` pour accomplir cela.
             $this->assertSame($stub, $stub->doSomething());
         }
     }
-    ?>
+
 
 Parfois, une méthode bouchon doit retourner différentes valeurs selon
 une liste prédéfinie d'arguments. Vous pouvez utiliser
@@ -270,7 +270,7 @@ un exemple.
             $this->assertSame('h', $stub->doSomething('e', 'f', 'g'));
         }
     }
-    ?>
+
 
 Quand l'appel d'une méthode bouchonné doit retourner une valeur calculée au lieu
 d'une valeur fixée (voir ``returnValue()``) ou un paramètre
@@ -301,7 +301,7 @@ d'une fonction ou méthode de rappel. Voir
             $this->assertSame('fbzrguvat', $stub->doSomething('something'));
         }
     }
-    ?>
+
 
 Une alternative plus simple à la configuration d'une méthode de rappel peut
 consister à indiquer une liste de valeurs désirées. Vous pouvez faire
@@ -333,7 +333,7 @@ un exemple.
             $this->assertSame(5, $stub->doSomething());
         }
     }
-    ?>
+
 
 Au lieu de retourner une valeur, une méthode bouchon peut également lever
 une exception. :numref:`test-doubles.stubs.examples.StubTest8.php`
@@ -361,7 +361,7 @@ montre comme utiliser ``throwException()`` pour faire cela.
             $stub->doSomething();
         }
     }
-    ?>
+
 
 Alternativement, vous pouvez écrire le bouchon vous-même et améliorer votre conception
 en cours de route. Des ressources largement utilisées sont accédées via une unique façade,
@@ -477,7 +477,7 @@ qui sont une partie du système testé (SUT).
 
         // Autre méthodes
     }
-    ?>
+
 
 :numref:`test-doubles.mock-objects.examples.SubjectTest.php`
 illustre comment utiliser un mock pour tester l'interaction entre
@@ -529,7 +529,7 @@ et ``with()`` pour spécifier comment cette interaction doit se présenter.
             $subject->doSomething();
         }
     }
-    ?>
+
 
 La méthode ``with()`` peut prendre n'importe quel
 nombre de paramètres, correspondant au nombre de paramètres des méthodes
@@ -569,7 +569,7 @@ correspondance, sur les paramètres de méthode.
             $subject->doSomethingBad();
         }
     }
-    ?>
+
 
 La méthode ``withConsecutive()`` peut prendre n'importe quel
 nombre de tableau de paramètres, selon les appels que vous souhaitez tester.
@@ -602,7 +602,7 @@ méthode mockée, comme avec ``with()``.
             $mock->set('bar', 48);
         }
     }
-    ?>
+
 
 La contrainte ``callback()`` peut être utilisée pour une vérification
 plus complexe d'un argument. Cette contrainte prend comme seul paramètre une fonction de
@@ -644,7 +644,7 @@ passe la vérification et ``false`` sinon.
             $subject->doSomethingBad();
         }
     }
-    ?>
+
 
 .. code-block:: php
     :caption: Tester qu'une méthode est appelée une seule fois avec le même objet qui a été passé
@@ -670,7 +670,7 @@ passe la vérification et ``false`` sinon.
             $mock->foo($expectedObject);
         }
     }
-    ?>
+
 
 .. code-block:: php
     :caption: Créer un OBJET mock avec les paramètres de clonage activés
@@ -693,7 +693,7 @@ passe la vérification et ``false`` sinon.
             // échouera.
         }
     }
-    ?>
+
 
 :ref:`appendixes.assertions.assertThat.tables.constraints`
 montre les contraintes qui peuvent être appliquées aux paramètres de méthode et
@@ -811,7 +811,7 @@ révélations:
             $subject->doSomething();
         }
     }
-    ?>
+
 
 Reportez-vous à la `documentation <https://github.com/phpspec/prophecy#how-to-use-it>`_
 de Prophecy pour plus de détails sur la création, la configuration et l'utilisation de
@@ -856,7 +856,7 @@ sont mockées. Cela permet de tester les méthodes concrètes d'un Trait.
             $this->assertTrue($mock->concreteMethod());
         }
     }
-    ?>
+
 
 La méthode ``getMockForAbstractClass()`` retourne un mock
 pour une classe abstraite. Toutes les méthodes abstraites d'une classe mock
@@ -893,7 +893,7 @@ abstraite.
             $this->assertTrue($stub->concreteMethod());
         }
     }
-    ?>
+
 
 .. _test-doubles.stubbing-and-mocking-web-services:
 
@@ -980,7 +980,7 @@ par exemple, d'un web service décrit dans :file:`GoogleSearch.wsdl`.
             );
         }
     }
-    ?>
+
 
 .. _test-doubles.mocking-the-filesystem:
 
@@ -1037,7 +1037,7 @@ montre une classe qui interagit avec le système de fichiers.
                 mkdir($this->directory, 0700, true);
             }
         }
-    }?>
+    }
 
 Sans un système de fichiers virtuel tel que vfsStream, nous ne pouvons
 pas tester la méthode ``setDirectory()`` en isolation des influences
@@ -1075,7 +1075,7 @@ extérieures (voir :numref:`test-doubles.mocking-the-filesystem.examples.Example
             }
         }
     }
-    ?>
+
 
 L'approche précédente possède plusieurs inconvénients :
 
@@ -1119,7 +1119,7 @@ pour une classe qui interagit avec le système de fichiers.
             $this->assertTrue(vfsStreamWrapper::getRoot()->hasChild('id'));
         }
     }
-    ?>
+
 
 Ceci présente plusieurs avantages :
 

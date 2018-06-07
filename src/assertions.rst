@@ -64,7 +64,7 @@ Signale une erreur identifiée par ``$message`` si le tableau ``$array`` ne disp
             $this->assertArrayHasKey('foo', ['bar' => 'baz']);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -110,7 +110,7 @@ Signale une erreur identifiée par ``$message`` si ``$className::attributeName``
             $this->assertClassHasAttribute('foo', stdClass::class);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -156,7 +156,7 @@ Signale une erreur identifiée par ``$message`` si ``$array`` ne contient pas le
             $this->assertArraySubset(['config' => ['key-a', 'key-b']], ['config' => ['key-a']]);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -207,7 +207,7 @@ Signale une erreur identifiée par ``$message`` si ``$className::attributeName``
             $this->assertClassHasStaticAttribute('foo', stdClass::class);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -255,7 +255,7 @@ Signale une erreur identifiée par ``$message`` si ``$needle`` n'est pas un él�
             $this->assertContains(4, [1, 2, 3]);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -296,7 +296,7 @@ Si ``$ignoreCase`` est ``true``, ce test sera sensible à la casse.
             $this->assertContains('baz', 'foobar');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -336,7 +336,7 @@ Si ``$ignoreCase`` est ``true``, ce test sera sensible à la casse.
             $this->assertContains('foo', 'FooBar', '', true);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -386,7 +386,7 @@ Signale une erreur identifiée par ``$message`` si ``$haystack`` ne contient pas
             $this->assertContainsOnly('string', ['1', '2', 3]);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -437,7 +437,7 @@ Signale une erreur identifiée par ``$message`` si ``$haystack`` ne contient pas
             );
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -483,7 +483,7 @@ Signale une erreur identifiée par ``$message`` si le nombre d'éléments dans `
             $this->assertCount(0, ['foo']);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -529,7 +529,7 @@ Signale une erreur identifiée par ``$message`` si le répertoire spécifié par
             $this->assertDirectoryExists('/path/to/directory');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -575,7 +575,7 @@ Signale une erreur identifiée par ``$message`` si le répertoire spécifié par
             $this->assertDirectoryIsReadable('/path/to/directory');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -621,7 +621,7 @@ Signale une erreur identifiée par ``$message`` si le répertoire spécifié par
             $this->assertDirectoryIsWritable('/path/to/directory');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -669,7 +669,7 @@ Signale une erreur identifiée par ``$message`` si ``$actual`` n'est pas vide.
             $this->assertEmpty(['foo']);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -755,7 +755,7 @@ Signale une erreur identifiée par ``$message`` si la structure XML du DOMElemen
             );
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -840,7 +840,7 @@ Signale une erreur identifiée par ``$message`` si les deux variables ``$expecte
             $this->assertEquals("foo\nbar\nbaz\n", "foo\nbah\nbaz\n");
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -911,7 +911,7 @@ Lisez "`What Every Computer Scientist Should Know About Floating-Point Arithmeti
             $this->assertEquals(1.0, 1.1);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -956,7 +956,7 @@ Signale une erreur identifiée par ``$message`` si la forme canonique sans comme
             $this->assertEquals($expected, $actual);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1013,7 +1013,7 @@ Signale une erreur identifiée par ``$message`` si les deux objets ``$expected``
             $this->assertEquals($expected, $actual);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1061,7 +1061,7 @@ Signale une erreur identifiée par ``$message`` si les deux tableaux ``$expected
             $this->assertEquals(['a', 'b', 'c'], ['a', 'c', 'd']);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1117,7 +1117,7 @@ Signale une erreur identifiée par ``$message`` si ``$condition`` est ``true``.
             $this->assertFalse(true);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1163,7 +1163,7 @@ Signale une erreur identifiée par ``$message`` si le fichier spécifié par ``$
             $this->assertFileEquals('/home/sb/expected', '/home/sb/actual');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1215,7 +1215,7 @@ Signale une erreur identifiée par ``$message`` si le fichier spécifié par ``$
             $this->assertFileExists('/path/to/file');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1261,7 +1261,7 @@ Signale une erreur identifiée par ``$message`` si le fichier spécifié par ``$
             $this->assertFileIsReadable('/path/to/file');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1307,7 +1307,7 @@ Signale une erreur identifiée par ``$message`` si le fichier spécifié par ``$
             $this->assertFileIsWritable('/path/to/file');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1353,7 +1353,7 @@ Signale une erreur identifiée par ``$message`` si la valeur de ``$actual`` n'es
             $this->assertGreaterThan(2, 1);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1399,7 +1399,7 @@ Signale une erreur identifiée par ``$message`` si la valeur de ``$actual`` n'es
             $this->assertGreaterThanOrEqual(2, 1);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1445,7 +1445,7 @@ Signale une erreur identifiée par ``$message`` si ``$variable`` n'est pas ``INF
             $this->assertInfinite(1);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1493,7 +1493,7 @@ Signale une erreur identifiée par ``$message`` si ``$actual`` n'est pas une ins
             $this->assertInstanceOf(RuntimeException::class, new Exception);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1541,7 +1541,7 @@ Signale une erreur identifiée par ``$message`` si ``$actual`` n'est pas du type
             $this->assertInternalType('string', 42);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1587,7 +1587,7 @@ Signale une erreur identifiée par ``$message`` si le fichier ou le répertoire 
             $this->assertIsReadable('/path/to/unreadable');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1633,7 +1633,7 @@ Signale une erreur identifiée par ``$message`` si le fichier ou le répertoire 
             $this->assertIsWritable('/path/to/unwritable');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1679,7 +1679,7 @@ Signale une erreur identifiée par ``$message`` si la valeur de ``$actualFile`` 
               'path/to/fixture/file', 'path/to/actual/file');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1726,7 +1726,7 @@ Signale une erreur identifiée par ``$message`` si la valeur de ``$actualJson`` 
             );
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1774,7 +1774,7 @@ Signale une erreur identifiée par ``$message`` si la valeur de ``$actualJson`` 
             );
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1827,7 +1827,7 @@ Signale une erreur identifiée par ``$message`` si la valeur de ``$actual`` n'es
             $this->assertLessThan(1, 2);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1873,7 +1873,7 @@ Signale une erreur identifiée par ``$message`` si la valeur de ``$actual`` n'es
             $this->assertLessThanOrEqual(1, 2);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1917,7 +1917,7 @@ Signale une erreur identifiée par ``$message`` si ``$variable`` n'est pas ``NAN
             $this->assertNan(1);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -1963,7 +1963,7 @@ Signale une erreur identifiée par ``$message`` si ``$variable`` n'est pas ``nul
             $this->assertNull('foo');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2009,7 +2009,7 @@ Signale une erreur identifiée par ``$message`` si ``$object->attributeName`` n'
             $this->assertObjectHasAttribute('foo', new stdClass);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2055,7 +2055,7 @@ Signale une erreur identifiée par ``$message`` si ``$string`` ne correspond pas
             $this->assertRegExp('/foo/', 'bar');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2101,7 +2101,7 @@ Signale une erreur identifiée par ``$message`` si  ``$string`` ne correspond pa
             $this->assertStringMatchesFormat('%i', 'foo');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2193,7 +2193,7 @@ Signale une erreur identifiée par ``$message`` si ``$string`` ne correspond pas
             $this->assertStringMatchesFormatFile('/path/to/expected.txt', 'foo');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2242,7 +2242,7 @@ Signale une erreur identifiée par ``$message`` si les deux variables ``$expecte
             $this->assertSame('2204', 2204);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2281,7 +2281,7 @@ Signale une erreur identifiée par ``$message`` si les deux variables ``$expecte
             $this->assertSame(new stdClass, new stdClass);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2327,7 +2327,7 @@ Signale une erreur identifiée par ``$message`` si ``$string`` ne termine pas pa
             $this->assertStringEndsWith('suffix', 'foo');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2373,7 +2373,7 @@ Signale une erreur identifiée par ``$message`` le fichier spécifié par ``$exp
             $this->assertStringEqualsFile('/home/sb/expected', 'actual');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2425,7 +2425,7 @@ Signale une erreur identifiée par ``$message`` si ``$string`` ne commence pas p
             $this->assertStringStartsWith('prefix', 'foo');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2485,7 +2485,7 @@ Signale une erreur identifiée par ``$message``si ``$value`` ne correspond pas �
             );
         }
     }
-    ?>
+
 
 :numref:`appendixes.assertions.assertThat.tables.constraints` montre les
 classes ``PHPUnit\Framework\Constraint`` disponibles.
@@ -2589,7 +2589,7 @@ Signale une erreur identifiée par ``$message`` si ``$condition`` est ``false``.
             $this->assertTrue(false);
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2636,7 +2636,7 @@ Signale une erreur identifiée par ``$message`` si le document XML dans ``$actua
               '/home/sb/expected.xml', '/home/sb/actual.xml');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2691,7 +2691,7 @@ Signale une erreur identifiée par ``$message`` si le document XML dans ``$actua
               '/home/sb/expected.xml', '<foo><baz/></foo>');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -2746,7 +2746,7 @@ Signale une erreur identifiée par ``$message`` si le document XML dans ``$actua
               '<foo><bar/></foo>', '<foo><baz/></foo>');
         }
     }
-    ?>
+
 
 .. code-block:: bash
 

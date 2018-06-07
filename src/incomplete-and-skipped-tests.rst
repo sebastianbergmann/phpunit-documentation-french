@@ -66,7 +66,7 @@ dans la méthode de test, nous marquons le test comme étant incomplet.
             );
         }
     }
-    ?>
+
 
 Un test incomplet est signalé par un ``I`` sur la sortie écran
 du lanceur de test en ligne de commandes PHPUnit, comme montré dans l'exemple
@@ -145,7 +145,7 @@ pour sauter le test si ce n'est pas le cas.
             // ...
         }
     }
-    ?>
+
 
 Un test qui a été sauté est signalé par un ``S`` dans la sortie
 écran du lanceur de tests en ligne de commande PHPUnit, comme montré dans
@@ -248,7 +248,7 @@ l'annotation ``@requires`` pour exprimer les préconditions communes pour un cas
 
         // ... All other tests require the mysqli extension
     }
-    ?>
+
 
 Si vous utilisez une syntaxe qui ne compile pas avec une version donnée de PHP, regardez
 dans la configuration xml pour les inclusions dépendant de la version dans :ref:`appendixes.configuration.testsuites`

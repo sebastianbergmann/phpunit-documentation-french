@@ -72,7 +72,7 @@ de suivre la façon dont PHPUnit implémente ses propres assertions. Comme vous 
         }
 
         // ...
-    }?>
+    }
 
 :numref:`extending-phpunit.examples.IsTrue.php` montre comment
 ``PHPUnit\Framework\Constraint\IsTrue`` étend la classe
@@ -111,7 +111,7 @@ abstraite de base pour des objets matcher (ou des contraintes),
         {
             return 'is true';
         }
-    }?>
+    }
 
 L'effort d'implémentation des méthodes ``assertTrue()`` et
 ``isTrue()`` ainsi que la classe
@@ -185,7 +185,7 @@ montre une implémentation simple de l'interface
             printf("TestSuite '%s' ended.\n", $suite->getName());
         }
     }
-    ?>
+
 
 :numref:`extending-phpunit.examples.BaseTestListener.php`
 montre comment étendre la classe abstraite
@@ -207,7 +207,7 @@ tous les autres.
             printf("Test '%s' ended.\n", $test->getName());
         }
     }
-    ?>
+
 
 Dans :ref:`appendixes.configuration.test-listeners` vous pouvez voir
 comment configurer PHPUnit pour brancher votre moniteur de test lors de l'exécution
@@ -293,7 +293,7 @@ et la seconde valeur celle constatée.
 
     $test = new DataDrivenTest('data_file.csv');
     $result = PHPUnit\TextUI\TestRunner::run($test);
-    ?>
+
 
 .. code-block:: bash
 
