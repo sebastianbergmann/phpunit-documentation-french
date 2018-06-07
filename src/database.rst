@@ -209,7 +209,7 @@ hériter de la classe
             $this->assertSame(2, 1 + 1);
         }
     }
-    ?>
+
 
 Si vous voulez tester du code qui fonctionne avec l'extension base de données,
 le setup sera un peu plus complexe et vous devrez hériter d'un cas de test
@@ -244,7 +244,7 @@ abstrait différent qui nécessite que vous implémentiez deux méthodes abstrai
             return $this->createFlatXMLDataSet(dirname(__FILE__).'/_files/guestbook-seed.xml');
         }
     }
-    ?>
+
 
 .. _database.implementing-getconnection:
 
@@ -360,7 +360,7 @@ d'indiquer des données de fixture différentes pour chaque cas de test :
             return $this->conn;
         }
     }
-    ?>
+
 
 Mais la connexion à la base de données reste codée en dur dans la
 connexion PDO. PHPUnit possède une autre fonctionnalité formidable
@@ -412,7 +412,7 @@ Nous pouvons maintenant modifier notre cas de test pour qu'il ressemble à ça :
             return $this->conn;
         }
     }
-    ?>
+
 
 Nous pouvons maintenant lancer la suite de tests de la base de données en utilisant différentes
 configurations depuis l'interface en ligne de commandes:
@@ -611,7 +611,7 @@ dans votre cas de test de base de données en appelant la méthode
             return $this->createFlatXmlDataSet('myFlatXmlFixture.xml');
         }
     }
-    ?>
+
 
 .. _database.xml-dataset:
 
@@ -680,7 +680,7 @@ cas de test de base de données en appelant la méthode
             return $this->createXMLDataSet('myXmlFixture.xml');
         }
     }
-    ?>
+
 
 .. _database.mysql-xml-dataset:
 
@@ -719,7 +719,7 @@ la méthode ``createMySQLXMLDataSet($filename)``:
             return $this->createMySQLXMLDataSet('/path/to/file.xml');
         }
     }
-    ?>
+
 
 .. _database.yaml-dataset:
 
@@ -766,7 +766,7 @@ pour le cas de tests de base de données, si bien que vous devez l'instancier ma
             return new YamlDataSet(dirname(__FILE__)."/_files/guestbook.yml");
         }
     }
-    ?>
+
 
 .. _database.csv-dataset:
 
@@ -808,7 +808,7 @@ Vous pouvez créer un dataset CSV en appelant :
             return $dataSet;
         }
     }
-    ?>
+
 
 .. _database.array-dataset:
 
@@ -851,7 +851,7 @@ facilement la vôtre. Notre exemple du Livre d'or devrait ressembler à :
             );
         }
     }
-    ?>
+
 
 Un DataSet PHP possède des avantages évidents sur les autres datasets utilisant des
 fichiers :
@@ -925,7 +925,7 @@ L'implémentation de ce DataSet tableau est simple et
             return $this->tables[$tableName];
         }
     }
-    ?>
+
 
 .. _database.query-sql-dataset:
 
@@ -941,7 +941,7 @@ qui contiennent le contenu constaté de la base de données. C'est là que le Da
     <?php
     $ds = new PHPUnit\DbUnit\DataSet\QueryDataSet($this->getConnection());
     $ds->addTable('guestbook');
-    ?>
+
 
 Ajouter une table juste par son nom est un moyen implicite de définir
 la table de données avec la requête suivante :
@@ -951,7 +951,7 @@ la table de données avec la requête suivante :
     <?php
     $ds = new PHPUnit\DbUnit\DataSet\QueryDataSet($this->getConnection());
     $ds->addTable('guestbook', 'SELECT * FROM guestbook');
-    ?>
+
 
 Vous pouvez utiliser ceci en indiquant des requêtes arbitraires pour
 vos tables, par exemple en restreignant les lignes, les colonnes ou en
@@ -962,7 +962,7 @@ ajoutant des clauses ``ORDER BY``:
     <?php
     $ds = new PHPUnit\DbUnit\DataSet\QueryDataSet($this->getConnection());
     $ds->addTable('guestbook', 'SELECT id, content FROM guestbook ORDER BY created DESC');
-    ?>
+
 
 La section relative aux assertions de base de données montrera plus en détails comment
 utiliser le Query DataSet.
@@ -1017,7 +1017,7 @@ la méthode ``testFilteredGuestbook()``.
             // ...
         }
     }
-    ?>
+
 
 .. _database.replacement-dataset:
 
@@ -1061,7 +1061,7 @@ Nous encapsulons le DataSet au format XML à plat dans le DataSet de remplacemen
             return $rds;
         }
     }
-    ?>
+
 
 .. _database.dataset-filter:
 
@@ -1105,7 +1105,7 @@ particulièrement commode en combinaison avec le DataSet de base de données pou
             // ..
         }
     }
-    ?>
+
 
 .. admonition:: Note
 
@@ -1164,7 +1164,7 @@ En utiliser le DataSet composite, nous pouvons agréger les deux fichiers de fix
             return $compositeDs;
         }
     }
-    ?>
+
 
 .. _database.beware-of-foreign-keys:
 
@@ -1200,7 +1200,7 @@ si vous ne projetez pas d'implémenter votre propre DataSet ou DataTable.
 
         public function getReverseIterator();
     }
-    ?>
+
 
 L'interface publique est utilisée en interne par l'assertion
 ``assertDataSetsEqual()`` du cas de test de base de données
@@ -1232,7 +1232,7 @@ Une table est également représentée par l'interface suivante :
         public function getRow($row);
         public function assertEquals(ITable $other);
     }
-    ?>
+
 
 Mise à part la méthode ``getTableMetaData()``, ça parle
 plutôt de soi-même. Les méthodes utilisées sont toutes nécessaires pour
@@ -1283,7 +1283,7 @@ qui doit être retournée par la méthode
 
         // ...
     }
-    ?>
+
 
 #.
 
@@ -1306,7 +1306,7 @@ qui doit être retournée par la méthode
                $dataSet = $this->getConnection()->createDataSet();
            }
        }
-       ?>
+
 
 #.
 
@@ -1332,7 +1332,7 @@ qui doit être retournée par la méthode
                $queryTable = $this->getConnection()->createQueryTable('guestbook', 'SELECT * FROM guestbook');
            }
        }
-       ?>
+
 
 #.
 
@@ -1356,7 +1356,7 @@ qui doit être retournée par la méthode
                $this->assertSame(2, $this->getConnection()->getRowCount('guestbook'));
            }
        }
-       ?>
+
 
 .. _database.database-assertions-api:
 
@@ -1400,7 +1400,7 @@ qui nous ont accompagnées dans tous les exemples précédents, mais aussi une t
             $this->assertSame(3, $this->getConnection()->getRowCount('guestbook'), "Inserting failed");
         }
     }
-    ?>
+
 
 .. _database.asserting-the-state-of-a-table:
 
@@ -1439,7 +1439,7 @@ son contenu d'un nom de table et d'une requête SQL et le compare
             $this->assertTablesEqual($expectedTable, $queryTable);
         }
     }
-    ?>
+
 
 Maintenant, nous devons écrire le fichier XML à plat *expectedBook.xml*
 pour cette assertion :
@@ -1480,7 +1480,7 @@ Nous devons corriger l'appel à Query Table:
     $queryTable = $this->getConnection()->createQueryTable(
         'guestbook', 'SELECT id, content, user FROM guestbook'
     );
-    ?>
+
 
 .. _database.asserting-the-result-of-a-query:
 
@@ -1511,7 +1511,7 @@ d'un résultat avec une requête et en le comparant avec un ensemble de données
             $this->assertTablesEqual($expectedTable, $queryTable);
         }
     }
-    ?>
+
 
 .. _database.asserting-the-state-of-multiple-tables:
 
@@ -1544,7 +1544,7 @@ basé sur un fichier. Il y a deux façons différentes de faire des assertions d
                $this->assertDataSetsEqual($expectedDataSet, $dataSet);
            }
        }
-       ?>
+
 
 #.
 
@@ -1570,7 +1570,7 @@ basé sur un fichier. Il y a deux façons différentes de faire des assertions d
                $this->assertDataSetsEqual($expectedDataSet, $dataSet);
            }
        }
-       ?>
+
 
 .. _database.frequently-asked-questions:
 
