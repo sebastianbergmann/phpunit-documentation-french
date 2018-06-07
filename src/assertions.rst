@@ -13,16 +13,16 @@ Cette annexe liste les différentes méthodes d'assertion disponibles.
 De l'utilisation Statique vs. Non-Statique des méthodes d'assertion
 ###################################################################
 
-Les assertions de PHPUnitsont implémentées dans PHPUnit\\Framework\\Assert.
-PHPUnit\\Framework\\TestCase hérite de PHPUnit\\Framework\\Assert.
+Les assertions de PHPUnitsont implémentées dans ``PHPUnit\Framework\Assert``.
+``PHPUnit\Framework\TestCase`` hérite de ``PHPUnit\Framework\Assert``.
 
 Les méthodes d'assertion sont declarées static et peuvent être appelées
-depuis n'importe quel contexte en utilisant ``PHPUnit\\Framework\\Assert::assertTrue()``,
+depuis n'importe quel contexte en utilisant ``PHPUnit\Framework\Assert::assertTrue()``,
 par exemple, ou en utilisant ``$this->assertTrue()`` ou ``self::assertTrue()``,
-par exemple, dans une classe qui étends PHPUnit\\Framework\\TestCase.
+par exemple, dans une classe qui étends ``PHPUnit\Framework\TestCase``.
 
 En fait, vous pouvez même utiliser des fonctions globales d'encapsulation comme ``assertTrue()`` dans
-n'importe quel contexte (y compris les classes qui étendent PHPUnit\\Framework\\TestCase)
+n'importe quel contexte (y compris les classes qui étendent ``PHPUnit\Framework\TestCase``)
 quand vous incluez (manuellement) le fichier de code source :file:`src/Framework/Assert/Functions.php`
 fournit avec PHPUnit.
 
