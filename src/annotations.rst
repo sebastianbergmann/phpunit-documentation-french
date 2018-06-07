@@ -763,8 +763,6 @@ L'annotation ``@testdox`` peut être appliqué aux classes de tests et aux méth
     l'annotation ``@testdox`` active aussi le comportement
     de l'annotation ``@test``.
 
-.. code-block:: php
-
 .. _appendixes.annotations.testWith:
 
 @testWith
