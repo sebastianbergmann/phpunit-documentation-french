@@ -149,7 +149,7 @@ Quand c'est utilisé à partir de la ligne de commande en écrivant sur ``php://
 cela prend en compte le réglage ``--colors``.
 Ecrire sur la sortie standard est l'option par défaut quand on utilise la ligne de commandes.
 Par défaut, ceci ne montrera que les fichiers qui ont au moins une ligne couverte.
-Ceci peut uniquement être modifié via l'option de configuration xml ``showUncoveredFiles``
+Ceci peut uniquement être modifié via l'option de configuration xml ``showUncoveredFiles``.
 Voir :ref:`appendixes.configuration.logging`.
 Par défaut, tous les fichiers et leur status de couverture sont affichés dans le rapport détaillé.
 Ceci peut être changé via l'option de configuration xml
