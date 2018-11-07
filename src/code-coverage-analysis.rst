@@ -117,15 +117,15 @@ PHPUnit quels fichiers de code source inclure dans le rapport de couverture de c
 Cela peut être fait en utilisant l'option de ligne de commande ``--whitelist``
 ou via le fichier de configuration (voir :ref:`appendixes.configuration.whitelisting-files`).
 
-The ``addUncoveredFilesFromWhitelist`` and ``processUncoveredFilesFromWhitelist`` configuration settings are available to configure how the whitelist is used:
+Les paramètres de configuration ``addUncoveredFilesFromWhitelist`` et ``processUncoveredFilesFromWhitelist`` sont disponibles pour configurer comment la liste blanche va se comporter:
 
-- ``addUncoveredFilesFromWhitelist="false"`` means that only whitelisted files that have a least one of line of executed code are included in the code coverage report
+- ``addUncoveredFilesFromWhitelist="false"`` signifie que seuls les fichiers de la liste blanche qui ont au moins une ligne de code exécutée sont inclus dans le rapport de couverture
 
-- ``addUncoveredFilesFromWhitelist="true"`` (default) means that all whitelisted files are included in the code coverage report even if not a single line of code of such a file is executed
+- ``addUncoveredFilesFromWhitelist="true"`` (default) signifie que tous les fichiers de la liste blanche sont inclus dans le rapport de couverture même s'il n'y a pas une seule ligne de code d'exécutée
 
-- ``processUncoveredFilesFromWhitelist="false"`` (default) means that a whitelisted file that has no executed lines of code will be added to the code coverage report (if ``addUncoveredFilesFromWhitelist="true"`` is set) but it will not be loaded by PHPUnit and it will therefore not be analysed for correct executable lines of code information
+- ``processUncoveredFilesFromWhitelist="false"`` (default) signifie qu'un fichier de la liste blanche qui n'a aucune ligne de code d'exécutée sera ajouté au rapport de couverture (si ``addUncoveredFilesFromWhitelist`` vaut ``true``) mais ne sera pas chargé par PHPUnit et par conséquent pas analysé pour l'information correcte des lignes de code excécutables
 
-- ``processUncoveredFilesFromWhitelist="true"`` means that a whitelisted file that has no executed lines of code will be loaded by PHPUnit so that it can be analysed for correct executable lines of code information
+- ``processUncoveredFilesFromWhitelist="true"`` signifie qu'un fichier de la liste blanche qui n'a aucune ligne de code d'exécutée sera chargé par PHPUnit et pourra donc être analysé pour l'information correcte des lignes de code excécutables
 
 .. admonition:: Note
 
