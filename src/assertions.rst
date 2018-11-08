@@ -13,7 +13,7 @@ Cette annexe liste les différentes méthodes d'assertion disponibles.
 De l'utilisation Statique vs. Non-Statique des méthodes d'assertion
 ###################################################################
 
-Les assertions de PHPUnitsont implémentées dans PHPUnit\\Framework\\Assert.
+Les assertions de PHPUnit sont implémentées dans PHPUnit\\Framework\\Assert.
 PHPUnit\\Framework\\TestCase hérite de PHPUnit\\Framework\\Assert.
 
 Les méthodes d'assertion sont declarées static et peuvent être appelées

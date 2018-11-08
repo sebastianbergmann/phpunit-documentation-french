@@ -141,6 +141,7 @@ Couverture de code (TEXTE)
 ##########################
 
 Un affichage de la couverture de code lisible pour la ligne de commandes ou un fichier texte.
+
 Le but de ce format de sortie est de fournir un aperçu rapide de couverture
 en travaillant sur un petit ensemble de classes. Pour des projets plus grand
 cette sortie peut être utile pour obtenir un aperçu rapide de la couverture
