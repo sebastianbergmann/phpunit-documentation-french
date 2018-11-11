@@ -37,7 +37,7 @@ effectuée en suivant par défaut les bonnes pratiques (les méthodes ``__constr
 et les arguments passés à une méthode de la doublure de tests ne sont pas clonés. Si ce
 comportement par défaut ne correspond pas à ce dont vous avez besoin vous pouvez
 alors utiliser la méthode ``getMockBuilder($type)`` pour personnaliser la
-génération de doublure de test en utilisant un interface souple (fluent interface).
+génération de doublure de test en utilisant une interface souple (fluent interface).
 
 Par défaut, toutes les méthodes de la classe originelle sont remplacées par une
 implémentation fictive qui se contente de retourner ``null`` (sans
@@ -202,7 +202,7 @@ pouvez obtenir ceci en utilisant ``returnArgument()`` à la place de
     }
     ?>
 
-Quand on teste interface souple, il est parfois utile que la méthode bouchon
+Quand on teste une interface souple, il est parfois utile que la méthode bouchon
 retourne une référence à l'objet bouchon.
 :numref:`test-doubles.stubs.examples.StubTest4.php` présente comment
 utiliser ``returnSelf()`` pour accomplir cela.
@@ -570,7 +570,7 @@ correspondance, sur les paramètres de méthode.
     ?>
 
 La méthode ``withConsecutive()`` peut prendre n'importe quel
-nombre de tableau de paramètres, selon les appels que vous souhaitez tester.
+nombre de tableaux de paramètres, selon les appels que vous souhaitez tester.
 Chaque tableau est une liste de contraintes correspondant aux paramètres de la
 méthode mockée, comme avec ``with()``.
 
