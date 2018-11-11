@@ -6,7 +6,7 @@
 Copyright
 =========
 
-.. code-block:: php
+.. code-block:: text
 
     Copyright (c) 2005-2018 Sebastian Bergmann.
 
@@ -419,5 +419,3 @@ Copyright
     Creative Commons may be contacted at http://creativecommons.org/.
 
     ====================================================================
-
-
