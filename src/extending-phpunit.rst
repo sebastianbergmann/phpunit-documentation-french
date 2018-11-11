@@ -323,10 +323,10 @@ Etendre le TestRunner
 
 PHPUnit |version| prend en charge les extensions TestRunner, qui peuvent se connecter
 à divers événements pendant l'exécution du test.
-Voir :ref:`appendixes.configuration.extensions` pour plus de détails sur la façon 
+Voir :ref:`appendixes.configuration.extensions` pour plus de détails sur la façon
 d'enregistrer les extensions dans la configuration XML de PHPUnit.
 
-Chaque événement disponible auquel l'extension peut se connecter est représenté par une 
+Chaque événement disponible auquel l'extension peut se connecter est représenté par une
 interface que l'extension doit implémenter.
 :ref:`extending-phpunit.hooks` liste les événements disponibles dans
 PHPUnit |version|.
@@ -347,30 +347,29 @@ Interfaces disponibles
 - ``BeforeFirstTestHook``
 - ``BeforeTestHook``
 
-:numref:`extending-phpunit.examples.TestRunnerExtension` montre un exemple 
+:numref:`extending-phpunit.examples.TestRunnerExtension` montre un exemple
 d'une extension implémentant ``BeforeFirstTestHook`` et ``AfterLastTestHook`` :
 
 .. code-block:: php
     :caption: Exemple d'extension TestRunner
     :name: extending-phpunit.examples.TestRunnerExtension
 
-        <?php
+    <?php
 
-        namespace Vendor;
+    namespace Vendor;
 
-        use PHPUnit\Runner\AfterLastTestHook;
-        use PHPUnit\Runner\BeforeFirstTestHook;
+    use PHPUnit\Runner\AfterLastTestHook;
+    use PHPUnit\Runner\BeforeFirstTestHook;
 
-        final class MyExtension implements BeforeFirstTestHook, AfterLastTestHook
+    final class MyExtension implements BeforeFirstTestHook, AfterLastTestHook
+    {
+        public function executeAfterLastTest(): void
         {
-            public function executeAfterLastTest(): void
-            {
-                // called after the last test has been run
-            }
-
-            public function executeBeforeFirstTest(): void
-            {
-                // called before the first test is being run
-            }
+            // called after the last test has been run
         }
 
+        public function executeBeforeFirstTest(): void
+        {
+            // called before the first test is being run
+        }
+    }

@@ -1072,5 +1072,3 @@ de comparaison "faible" sur les tableaux ou les objets.
 Dans cet exemple, la différence dans le premier indice entre
 ``1`` et ``'1'``
 est signalée même si la méthode ``assertEquals()`` considère les valeurs comme une correspondance.
-
-

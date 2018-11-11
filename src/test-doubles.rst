@@ -33,7 +33,7 @@ originelle est attendue ou requise.
 
 La méthode ``createMock($type)`` retourne immédiatement une doublure de
 test pour le type spécifié (interface ou classe). La création de cette doublure est
-effectuée en suivant par défaut les bonnes pratiques. 
+effectuée en suivant par défaut les bonnes pratiques.
 Les méthodes ``__construct()`` et ``__clone()`` de la classe originale ne sont pas exécutées
 et les arguments passés à une méthode de la doublure de tests ne sont pas clonés. Si ce
 comportement par défaut ne correspond pas à ce dont vous avez besoin vous pouvez
@@ -85,8 +85,6 @@ comme montré dans l'exemple. Ceci amène à un code plus lisible et "souple".
     :name: test-doubles.stubs.examples.SomeClass.php
 
     <?php
-    use PHPUnit\Framework\TestCase;
-
     class SomeClass
     {
         public function doSomething()
@@ -203,7 +201,6 @@ pouvez obtenir ceci en utilisant ``returnArgument()`` à la place de
             $this->assertSame('bar', $stub->doSomething('bar'));
         }
     }
-
 
 Quand on teste une interface souple, il est parfois utile que la méthode bouchon
 retourne une référence à l'objet bouchon.
