@@ -688,10 +688,10 @@ DataSet XML MySQL
 -----------------
 
 Ce nouveau format XML est spécifique au
-`serveur de bases de données MySQL <http://www.mysql.com>`_.
+`serveur de bases de données MySQL <https://www.mysql.com>`_.
 Sa gestion a été ajoutée dans PHPUnit 3.5. Les fichiers écrits ce format peuvent
 être générés avec l'utilitaire
-`mysqldump <http://dev.mysql.com/doc/refman/5.0/en/mysqldump.html>`_.
+`mysqldump <https://dev.mysql.com/doc/refman/5.0/en/mysqldump.html>`_.
 Contrairement aux datasets CSV, que ``mysqldump``
 gère également, un unique fichier de ce format XML peut contenir des données
 pour de multiples tables. Vous pouvez créer un fichier dans ce format en
@@ -895,7 +895,7 @@ L'implémentation de ce DataSet tableau est simple et
          */
         public function __construct(array $data)
         {
-            foreach ($data AS $tableName => $rows) {
+            foreach ($data as $tableName => $rows) {
                 $columns = [];
                 if (isset($rows[0])) {
                     $columns = array_keys($rows[0]);
@@ -904,7 +904,7 @@ L'implémentation de ce DataSet tableau est simple et
                 $metaData = new DefaultTableMetaData($tableName, $columns);
                 $table = new DefaultTable($metaData);
 
-                foreach ($rows AS $row) {
+                foreach ($rows as $row) {
                     $table->addRow($row);
                 }
                 $this->tables[$tableName] = $table;
@@ -1277,9 +1277,9 @@ qui doit être retournée par la méthode
 
     interface Connection
     {
-        public function createDataSet(Array $tableNames = NULL);
+        public function createDataSet(Array $tableNames = null);
         public function createQueryTable($resultName, $sql);
-        public function getRowCount($tableName, $whereClause = NULL);
+        public function getRowCount($tableName, $whereClause = null);
 
         // ...
     }
