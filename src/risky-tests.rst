@@ -64,7 +64,7 @@ paquet ``PHP_Invoker`` est installé et que
 l'extension ``pcntl`` est disponible. L'application de cette
 limite de temps peut être activée en utilisant
 l'option ``--enforce-time-limit`` sur la ligne de commande ou en
-définissant ``beStrictAboutTestSize="true"`` dans le fichier de
+définissant ``enforceTimeLimit="true"`` dans le fichier de
 configuration XML de PHPUnit.
 
 Un test annoté avec ``@large`` échouera s'il prend
@@ -94,5 +94,3 @@ peut être activé en utilisant l'option ``--strict-global-state``
 de la ligne de commande ou en définissant
 ``beStrictAboutChangesToGlobalState="true"`` dans le fichier de
 configuration XML de PHPUnit.
-
-
