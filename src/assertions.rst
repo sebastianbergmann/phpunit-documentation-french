@@ -2529,7 +2529,7 @@ classes ``PHPUnit\Framework\Constraint`` disponibles.
       - La contrainte qui valide que la classe évaluée possède un attribut donné.
     * - ``PHPUnit\Framework\Constraint\ClassHasStaticAttribute classHasStaticAttribute(string $attributeName)``
       - La contrainte qui valide que la classe évaluée possède un attribut statique donné.
-    * - ``PHPUnit\Framework\Constraint\ObjectHasAttribute hasAttribute(string $attributeName)``
+    * - ``PHPUnit\Framework\Constraint\ObjectHasAttribute objectHasAttribute(string $attributeName)``
       - La contrainte qui valide que l'objet évalué possède un attribut donné.
     * - ``PHPUnit\Framework\Constraint\IsIdentical identicalTo(mixed $value)``
       - Contrainte qui valide qu'une valeur est identique à une autre.
@@ -2774,5 +2774,3 @@ Signale une erreur identifiée par ``$message`` si le document XML dans ``$actua
 
     FAILURES!
     Tests: 1, Assertions: 1, Failures: 1.
-
-
