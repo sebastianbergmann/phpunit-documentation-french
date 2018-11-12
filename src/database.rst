@@ -40,7 +40,8 @@ PHPUnit et où vous vous retrouvez bloqué par l'un des problèmes suivants :
 
 L'extension DbUnit simplifie considérablement la configuration d'une base de données à des fins
 de test et vous permet de vérifier le contenu d'une base de données après avoir
-réalisé une suite d'opérations.
+réalisé une suite d'opérations. L'installation de l'extension DbUnit est
+facile et documentée dans :ref:`installation.optional-packages`
 
 .. _database.supported-vendors-for-database-testing:
 
