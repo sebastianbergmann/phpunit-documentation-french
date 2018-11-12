@@ -372,4 +372,10 @@ La configuration XML ci-dessus correspond au code PHP suivant :
     $_FILES['foo'] = 'bar';
     $_REQUEST['foo'] = 'bar';
 
+Par défaut, les variables d'environnement ne sont pas écrasées si elles existent déjà.
+Pour forcer l'écrasement de variables existantes, utilisez l'attribut ``force`` :
 
+.. code-block:: xml
+
+    <php>
+      <env name="foo" value="bar" force="true"/>
