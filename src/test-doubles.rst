@@ -48,7 +48,7 @@ retourner une valeur donnée quand elles sont appelées.
 .. admonition:: Limitations: méthodes final, private et static
 
    Merci de noter que les méthodes ``final``, ``private``,
-   ``protected`` et ``static`` ne peuvent pas être remplacées
+   et ``static`` ne peuvent pas être remplacées
    par un bouchon (stub) ou un mock. Elles seront ignorées par la
    fonction de doublure de test de PHPUnit et conserveront leur comportement initial sauf pour
    les méthodes ``static`` qui seront renplacées par une méthode jetant
