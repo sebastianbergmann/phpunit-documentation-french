@@ -77,12 +77,16 @@ plus de 10 secondes à s'exécuter. Ce délai d'exécution est configurable via 
 ``timeoutForMediumTests`` dans le fichier
 de configuration XML.
 
-Un test qui n'est pas annoté avec ``@medium`` ou
-``@large`` sera traité comme s'il était annoté avec
-``@small``. Un test "small" échouera s'il prend
+Un test annoté avec ``@small`` échouera s'il prend
 plus de 1 seconde à s'exécuter. Ce délai d'exécution est configurable via
-l'attribut ``timeoutForMediumTests`` dans le fichier de
+l'attribut ``timeoutForSmallTests`` dans le fichier de
 configuration XML.
+
+.. admonition:: Note
+
+   Les tests doivent être explicitement annotés par ``@small``,
+   ``@medium`` ou ``@large`` pour activer les limites de temps d'exécution.
+
 
 .. _risky-tests.global-state-manipulation:
 
