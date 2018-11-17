@@ -34,7 +34,7 @@ de suivre la façon dont PHPUnit implémente ses propres assertions. Comme vous 
 ``assertThat()`` pour évaluation.
 
 .. code-block:: php
-    :caption: Les méthodes assertTrue() et isTrue() de la classe PHPUnit\Framework\Assert
+    :caption: Les méthodes assertTrue() et isTrue() de la classe PHPUnit\\Framework\\Assert
     :name: extending-phpunit.examples.Assert.php
 
     <?php
@@ -80,7 +80,7 @@ abstraite de base pour des objets matcher (ou des contraintes),
 ``PHPUnit\Framework\Constraint``.
 
 .. code-block:: php
-    :caption: La classe PHPUnit_Framework_Constraint_IsTrue
+    :caption: La classe PHPUnit\\Framework\\Constraint\\IsTrue
     :name: extending-phpunit.examples.IsTrue.php
 
     <?php
@@ -140,69 +140,77 @@ montre une implémentation simple de l'interface
 
     class SimpleTestListener implements TestListener
     {
-        public function addError(PHPUnit\Framework\Test $test, Exception $e, $time)
+        public function addError(PHPUnit\Framework\Test $test, \Throwable $e, float $time): void
         {
             printf("Error while running test '%s'.\n", $test->getName());
         }
 
-        public function addFailure(PHPUnit\Framework\Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
+        public function addWarning(PHPUnit\Framework\Test $test, PHPUnit\Framework\Warning $e, float $time): void
+        {
+            printf("Warning while running test '%s'.\n", $test->getName());
+        }
+
+        public function addFailure(PHPUnit\Framework\Test $test, PHPUnit\Framework\AssertionFailedError $e, float $time): void
         {
             printf("Test '%s' failed.\n", $test->getName());
         }
 
-        public function addIncompleteTest(PHPUnit\Framework\Test $test, Exception $e, $time)
+        public function addIncompleteTest(PHPUnit\Framework\Test $test, \Throwable $e, float $time): void
         {
             printf("Test '%s' is incomplete.\n", $test->getName());
         }
 
-        public function addRiskyTest(PHPUnit\Framework\Test $test, Exception $e, $time)
+        public function addRiskyTest(PHPUnit\Framework\Test $test, \Throwable $e, float $time): void
         {
             printf("Test '%s' is deemed risky.\n", $test->getName());
         }
 
-        public function addSkippedTest(PHPUnit\Framework\Test $test, Exception $e, $time)
+        public function addSkippedTest(PHPUnit\Framework\Test $test, \Throwable $e, float $time): void
         {
             printf("Test '%s' has been skipped.\n", $test->getName());
         }
 
-        public function startTest(PHPUnit\Framework\Test $test)
+        public function startTest(PHPUnit\Framework\Test $test): void
         {
             printf("Test '%s' started.\n", $test->getName());
         }
 
-        public function endTest(PHPUnit\Framework\Test $test, $time)
+        public function endTest(PHPUnit\Framework\Test $test, float $time): void
         {
             printf("Test '%s' ended.\n", $test->getName());
         }
 
-        public function startTestSuite(PHPUnit\Framework\TestSuite $suite)
+        public function startTestSuite(PHPUnit\Framework\TestSuite $suite): void
         {
             printf("TestSuite '%s' started.\n", $suite->getName());
         }
 
-        public function endTestSuite(PHPUnit\Framework\TestSuite $suite)
+        public function endTestSuite(PHPUnit\Framework\TestSuite $suite): void
         {
             printf("TestSuite '%s' ended.\n", $suite->getName());
         }
     }
 
 
-:numref:`extending-phpunit.examples.BaseTestListener.php`
-montre comment étendre la classe abstraite
-``PHPUnit\Framework\BaseTestListener``, qui permet de spécifier uniquement les méthodes d'interface
+:numref:`extending-phpunit.examples.ExtendedTestListener.php`
+montre comment utiliser le trait
+``PHPUnit\Framework\TestListenerDefaultImplementation``, qui permet de spécifier uniquement les méthodes d'interface
 qui sont intéressantes pour votre cas d'utilisation, tout en fournissant des implémentations vides pour
 tous les autres.
 
 .. code-block:: php
-    :caption: Utiliser BaseTestListener
-    :name: extending-phpunit.examples.BaseTestListener.php
+    :caption: Utiliser le trait TestListenerDefaultImplementation
+    :name: extending-phpunit.examples.ExtendedTestListener.php
 
     <?php
-    use PHPUnit\Framework\BaseTestListener;
+    use PHPUnit\Framework\TestListener;
+    use PHPUnit\Framework\TestListenerDefaultImplementation;
 
-    class ShortTestListener extends BaseTestListener
+    class ShortTestListener implements TestListener
     {
-        public function endTest(PHPUnit\Framework\Test $test, $time)
+        use TestListenerDefaultImplementation;
+
+        public function endTest(PHPUnit\Framework\Test $test, float $time): void
         {
             printf("Test '%s' ended.\n", $test->getName());
         }
@@ -215,8 +223,8 @@ des tests.
 
 .. _extending-phpunit.PHPUnit_Framework_Test:
 
-Implémenter PHPUnit\Framework\Test
-##################################
+Implémenter PHPUnit\\Framework\\Test
+####################################
 
 L'interface ``PHPUnit\Framework\Test`` est restreinte et
 facile à implémenter. Vous pouvez écrire une implémentation de
@@ -323,10 +331,10 @@ Etendre le TestRunner
 
 PHPUnit |version| prend en charge les extensions TestRunner, qui peuvent se connecter
 à divers événements pendant l'exécution du test.
-Voir :ref:`appendixes.configuration.extensions` pour plus de détails sur la façon 
+Voir :ref:`appendixes.configuration.extensions` pour plus de détails sur la façon
 d'enregistrer les extensions dans la configuration XML de PHPUnit.
 
-Chaque événement disponible auquel l'extension peut se connecter est représenté par une 
+Chaque événement disponible auquel l'extension peut se connecter est représenté par une
 interface que l'extension doit implémenter.
 :ref:`extending-phpunit.hooks` liste les événements disponibles dans
 PHPUnit |version|.
@@ -347,7 +355,7 @@ Interfaces disponibles
 - ``BeforeFirstTestHook``
 - ``BeforeTestHook``
 
-:numref:`extending-phpunit.examples.TestRunnerExtension` montre un exemple 
+:numref:`extending-phpunit.examples.TestRunnerExtension` montre un exemple
 d'une extension implémentant ``BeforeFirstTestHook`` et ``AfterLastTestHook`` :
 
 .. code-block:: php
@@ -373,4 +381,3 @@ d'une extension implémentant ``BeforeFirstTestHook`` et ``AfterLastTestHook`` :
             // called before the first test is being run
         }
     }
-
