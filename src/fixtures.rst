@@ -78,7 +78,7 @@ de test et nous utilisons la variable d'instance nouvellement introduite.
             $this->assertTrue(empty($this->stack));
         }
     }
-    ?>
+
 
 Les méthodes template ``setUp()`` et ``tearDown()``
 sont exécutées une fois pour chaque méthode de test (et pour les nouvelles instances)
@@ -149,7 +149,7 @@ dans une classe de cas de test.
             throw $e;
         }
     }
-    ?>
+
 
 .. code-block:: bash
 
@@ -257,7 +257,7 @@ de déconnecter de la base de données après le dernier test du cas de test.
             self::$dbh = null;
         }
     }
-    ?>
+
 
 On n'insistera jamais assez sur le fait que partager les fixtures
 entre les tests réduit la valeur de ces tests. Le problème de conception

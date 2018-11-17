@@ -281,25 +281,25 @@ la syntaxe de l'annotation ``@covers``.
     * - Annotation
       - Description
     * - ``@covers ClassName::methodName``
-      - ``Indique que la méthode de test annotée couvre la méthode indiquée.``
+      - Indique que la méthode de test annotée couvre la méthode indiquée.
     * - ``@covers ClassName``
-      - ``Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée.``
+      - Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée.
     * - ``@covers ClassName<extended>``
-      - ``Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée ainsi que les classe(s) et interface(s) parentes.``
+      - Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée ainsi que les classe(s) et interface(s) parentes.
     * - ``@covers ClassName::<public>``
-      - ``Indique que la méthode de test annotée couvre toutes les méthodes publiques d'une classe donnée.``
+      - Indique que la méthode de test annotée couvre toutes les méthodes publiques d'une classe donnée.
     * - ``@covers ClassName::<protected>``
-      - ``Indique que la méthode de test annotée couvre toutes les méthodes protected d'une classe donnée.``
+      - Indique que la méthode de test annotée couvre toutes les méthodes protected d'une classe donnée.
     * - ``@covers ClassName::<private>``
-      - ``Indique que la méthode de test annotée couvre toutes les méthodes privées d'une classe donnée.``
+      - Indique que la méthode de test annotée couvre toutes les méthodes privées d'une classe donnée.
     * - ``@covers ClassName::<!public>``
-      - ``Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée qui ne sont pas publiques.``
+      - Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée qui ne sont pas publiques.
     * - ``@covers ClassName::<!protected>``
-      - ``Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée qui ne sont pas protected.``
+      - Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée qui ne sont pas protected.
     * - ``@covers ClassName::<!private>``
-      - ``Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée qui ne sont pas privées.``
+      - Indique que la méthode de test annotée couvre toutes les méthodes d'une classe donnée qui ne sont pas privées.
     * - ``@covers ::functionName``
-      - ``Indique que la méthode de test annotée couvre la méthode globale spécifiée.``
+      - Indique que la méthode de test annotée couvre la méthode globale spécifiée.
 
 .. _appendixes.annotations.coversDefaultClass:
 
@@ -332,7 +332,7 @@ répétés pour chaque annotation ``@covers``. Voir
             $o->publicMethod();
         }
     }
-    ?>
+
 
 .. _appendixes.annotations.coversNothing:
 
@@ -419,7 +419,7 @@ particulière.
          * @expectedException     MyException
          * @expectedExceptionCode 20
          */
-        public function testExceptionHasErrorcode20()
+        public function testExceptionHasErrorCode20()
         {
             throw new MyException('Some Message', 20);
         }
@@ -440,7 +440,7 @@ indiquer une constante de classe comme un
           * @expectedException     MyException
           * @expectedExceptionCode MyClass::ERRORCODE
           */
-        public function testExceptionHasErrorcode20()
+        public function testExceptionHasErrorCode20()
         {
           throw new MyException('Some Message', 20);
         }
@@ -762,8 +762,6 @@ L'annotation ``@testdox`` peut être appliqué aux classes de tests et aux méth
     Avant PHPUnit 7.0 (en raison d'un bug dans l'analyse des annotations), utiliser
     l'annotation ``@testdox`` active aussi le comportement
     de l'annotation ``@test``.
-
-.. code-block:: php
 
 .. _appendixes.annotations.testWith:
 

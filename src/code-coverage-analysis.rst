@@ -180,7 +180,7 @@ en utilisant les annotations ``@codeCoverageIgnore``,
     }
 
     exit; // @codeCoverageIgnore
-    ?>
+
 
 Les lignes de code ignorées (marquées comme ignorées à l'aide des annotations)
 sont comptées comme exécutées (si elles sont exécutables) et ne seront pas
@@ -273,7 +273,7 @@ montre un exemple.
             $this->assertSame(0, $this->ba->getBalance());
         }
     }
-    ?>
+
 
 Il est également possible d'indiquer qu'un test ne doit couvrir
 *aucune* méthode en utilisant l'annotation
@@ -309,7 +309,7 @@ ne générez une couverture de code avec des tests unitaires.
             $this->assertTablesEqual($expectedTable, $queryTable);
         }
     }
-    ?>
+
 
 .. _code-coverage-analysis.edge-cases:
 
@@ -340,4 +340,4 @@ de couverture de code prêtant à confusion.
     if (false) {
         this_call_will_never_show_up_as_covered();
     }
-    ?>
+

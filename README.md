@@ -1,12 +1,12 @@
 
-# Documentation française de PHPUnit
+# Documentation de PHPUnit en français
 
 Ce dépôt contient la documentation française de [PHPUnit](https://phpunit.de/).  
 La documentation est accessible à l'adresse https://phpunit.readthedocs.io/fr/latest/.
 
 La documentation originale en anglais : https://github.com/sebastianbergmann/phpunit-documentation-english
 
-# Traductions
+## Traductions
 
 Chaque traduction de la documentation est maintenue dans un dépôt
 dédié:
@@ -19,7 +19,7 @@ dédié:
 * [Documentation en chinois simplifié](https://github.com/sebastianbergmann/phpunit-documentation-chinese)
 * [Documentation en russe](https://github.com/sebastianbergmann/phpunit-documentation-russian)
 
-## Ajouter une nouvelle traduction
+### Ajouter une nouvelle traduction
 
 Si vous souhaitez créer une nouvelle traduction, merci d'ouvrir une issue sur le
 tracker de la documentation anglaise, indiquant la langue que vous souhaitez

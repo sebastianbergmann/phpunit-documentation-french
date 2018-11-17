@@ -416,38 +416,46 @@ La sortie sera plus verbeuse car elle contiendra le nom du jeu de données qui c
     <?php
     use PHPUnit\Framework\TestCase;
 
-    class CsvFileIterator implements Iterator {
+    class CsvFileIterator implements Iterator
+    {
         protected $file;
         protected $key = 0;
         protected $current;
 
-        public function __construct($file) {
+        public function __construct($file)
+        {
             $this->file = fopen($file, 'r');
         }
 
-        public function __destruct() {
+        public function __destruct()
+        {
             fclose($this->file);
         }
 
-        public function rewind() {
+        public function rewind()
+        {
             rewind($this->file);
             $this->current = fgetcsv($this->file);
             $this->key = 0;
         }
 
-        public function valid() {
+        public function valid()
+        {
             return !feof($this->file);
         }
 
-        public function key() {
+        public function key()
+        {
             return $this->key;
         }
 
-        public function current() {
+        public function current()
+        {
             return $this->current;
         }
 
-        public function next() {
+        public function next()
+        {
             $this->current = fgetcsv($this->file);
             $this->key++;
         }
@@ -529,42 +537,43 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
 
 .. code-block:: php
     :caption: Using multiple data providers for a single test
-      :name: writing-tests-for-phpunit.data-providers.examples.DataTest.php
+    :name: writing-tests-for-phpunit.data-providers.examples2.DataTest.php
 
-      <?php
-      use PHPUnit\Framework\TestCase;
+    <?php
+    use PHPUnit\Framework\TestCase;
 
-      class DataTest extends TestCase
-      {
-          /**
-           * @dataProvider additionWithNonNegativeNumbersProvider
-           * @dataProvider additionWithNegativeNumbersProvider
-           */
-          public function testAdd($a, $b, $expected)
-          {
-              $this->assertSame($expected, $a + $b);
-          }
+    class DataTest extends TestCase
+    {
+        /**
+         * @dataProvider additionWithNonNegativeNumbersProvider
+         * @dataProvider additionWithNegativeNumbersProvider
+         */
+        public function testAdd($a, $b, $expected)
+        {
+            $this->assertSame($expected, $a + $b);
+        }
 
-          public function additionWithNonNegativeNumbersProvider()
-          {
-              return [
-                  [0, 1, 1],
-                  [1, 0, 1],
-                  [1, 1, 3]
-              ];
-          }
+        public function additionWithNonNegativeNumbersProvider()
+        {
+            return [
+                [0, 1, 1],
+                [1, 0, 1],
+                [1, 1, 3]
+            ];
+        }
 
-          public function additionWithNegativeNumbersProvider()
-          {
-              return [
-                  [-1, 1, 0],
-                  [-1, -1, -2],
-                  [1, -1, 0]
-              ];
-          }
-       }
+        public function additionWithNegativeNumbersProvider()
+        {
+            return [
+                [-1, 1, 0],
+                [-1, -1, -2],
+                [1, -1, 0]
+            ];
+        }
+     }
 
 .. code-block:: bash
+
     $ phpunit DataTest
     PHPUnit |version|.0 by Sebastian Bergmann and contributors.
 
@@ -750,11 +759,11 @@ les remarques et les avertissements PHP.
    ``Exception`` avec ``@expectedException`` ou
    ``expectException()`` n'est plus autorisé.
 
-Quand les tests s'appuient sur des fonctions php qui déclenchent des erreurs
+Quand les tests s'appuient sur des fonctions PHP qui déclenchent des erreurs
 comme ``fopen``, il peut parfois être utile d'utiliser la
 suppression d'erreur lors du test. Ceci permet de contrôler les valeurs de retour
 en supprimant les remarques qui auraient conduit à une
-``PHPUnit\Framework\Error\Notice`` de phpunit.
+``PHPUnit\Framework\Error\Notice`` de PHPUnit.
 
 .. code-block:: php
     :caption: Tester des valeurs de retour d'un code source qui utilise des erreurs PHP
@@ -765,7 +774,8 @@ en supprimant les remarques qui auraient conduit à une
 
     class ErrorSuppressionTest extends TestCase
     {
-        public function testFileWriting() {
+        public function testFileWriting()
+        {
             $writer = new FileWriter;
 
             $this->assertFalse(@$writer->write('/is-not-writeable/file', 'stuff'));
@@ -774,10 +784,11 @@ en supprimant les remarques qui auraient conduit à une
 
     class FileWriter
     {
-        public function write($file, $content) {
+        public function write($file, $content)
+        {
             $file = fopen($file, 'w');
 
-            if($file == false) {
+            if ($file == false) {
                 return false;
             }
 
@@ -901,7 +912,8 @@ de contexte possible pour identifier le problème.
 
     class ArrayDiffTest extends TestCase
     {
-        public function testEquality() {
+        public function testEquality()
+        {
             $this->assertSame(
                 [1, 2,  3, 4, 5, 6],
                 [1, 2, 33, 4, 5, 6]
@@ -955,7 +967,8 @@ et fournira quelques lignes de contexte autour de chaque différence.
 
     class LongArrayDiffTest extends TestCase
     {
-        public function testEquality() {
+        public function testEquality()
+        {
             $this->assertSame(
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2,  3, 4, 5, 6],
                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 33, 4, 5, 6]
@@ -1015,7 +1028,8 @@ de comparaison "faible" sur les tableaux ou les objets.
 
     class ArrayWeakComparisonTest extends TestCase
     {
-        public function testEquality() {
+        public function testEquality()
+        {
             $this->assertEquals(
                 [1, 2, 3, 4, 5, 6],
                 ['1', 2, 33, 4, 5, 6]
@@ -1057,4 +1071,4 @@ de comparaison "faible" sur les tableaux ou les objets.
 
 Dans cet exemple, la différence dans le premier indice entre
 ``1`` et ``'1'``
-est signalée même si ``assertEquals()`` considère les valeurs comme une correspondance.
+est signalée même si la méthode ``assertEquals()`` considère les valeurs comme une correspondance.

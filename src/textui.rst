@@ -292,7 +292,7 @@ dans le code suivant :
                     ];
                 }
             }
-            ?>
+
 
     ``/path/to/my/test.phpt``
 

@@ -10,8 +10,7 @@ project vous acceptez de respecter ses conditions.
 
 * Forker le project.
 * Faire vos changements.
-* Executer `make html` pour être sûr que la documentation peut se construire et a le rendu
-* attendu.
+* Executer `make html` pour être sûr que la documentation peut se construire et a le rendu attendu.
 * Créer une pull request. Points bonus pour les branches thématiques.
 
 S'il vous plaît assurez-vous que vous avez
