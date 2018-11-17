@@ -8,7 +8,7 @@ La documentation originale en anglais : https://github.com/sebastianbergmann/php
 
 # Traductions
 
-Chaque traduction de la documentation est maintenue dans un dépôt 
+Chaque traduction de la documentation est maintenue dans un dépôt
 dédié:
 
 * [Documentation en anglais](https://github.com/sebastianbergmann/phpunit-documentation-english)
@@ -17,11 +17,12 @@ dédié:
 * [Documentation en brésilien et portuguais](https://github.com/sebastianbergmann/phpunit-documentation-brazilian-portuguese)
 * [Documentation en japonais](https://github.com/sebastianbergmann/phpunit-documentation-japanese)
 * [Documentation en chinois simplifié](https://github.com/sebastianbergmann/phpunit-documentation-chinese)
+* [Documentation en russe](https://github.com/sebastianbergmann/phpunit-documentation-russian)
 
 ## Ajouter une nouvelle traduction
 
 Si vous souhaitez créer une nouvelle traduction, merci d'ouvrir une issue sur le
-tracker de la documentation anglaise, indiquant la langue que vous souhaitez 
+tracker de la documentation anglaise, indiquant la langue que vous souhaitez
 traduire. Un dépôt sera créé et ajouté aux traductions disponibles.
 
 Idéalement, vous aurez déjà préparé une première version basée sur un fork ou
@@ -58,9 +59,9 @@ Merci de prendre du temps pour aider.
 
 ### Mode d'emploi
 
- * Vérifier le guide de traduction 
+ * Vérifier le guide de traduction
  * Faire une Pull requests documentée vers master (idéalement depuis une "feature branch").
- * Vérifier que la compilation passe avant de faire une pull request 
+ * Vérifier que la compilation passe avant de faire une pull request
  * Laisser les exemples de code en anglais
  * Respecter les sauts de ligne de la documentation originale afin de faciliter les recherches et les comparaisons (les numéros de lignes entre la documentation anglaise et française doivent être les mêmes)
 
@@ -89,7 +90,7 @@ Sont notamment visés les termes techniques.
 | verbe ing     | traduits par l'infinitif dans les titres : testing => tester              |
 
 
-Lectures recommandées : 
+Lectures recommandées :
 
- - https://framacalc.org/jargon-francais 
- - https://www.24joursdeweb.fr/2017/on-dit-numerique-et-pas-digital-bordel/ 
+ - https://framacalc.org/jargon-francais
+ - https://www.24joursdeweb.fr/2017/on-dit-numerique-et-pas-digital-bordel/
