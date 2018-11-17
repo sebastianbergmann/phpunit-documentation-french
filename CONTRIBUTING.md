@@ -11,7 +11,9 @@ project vous acceptez de respecter ses conditions.
 * Forker le project.
 * Faire vos changements.
 * Executer `make html` pour être sûr que la documentation peut se construire et a le rendu attendu.
-* Créer une pull request. Points bonus pour les branches thématiques.
+* Créer une pull request pour la branche la plus ancienne de la documentation pour laquelle vos modifications s'appliquent.
+
+Dans le cas où votre pull request corrigerait un bogue ou une erreur typographique, veuillez cibler la branche la plus ancienne concernée.
 
 S'il vous plaît assurez-vous que vous avez
 [configuré votre nom d'utilisateur et votre adresse e-mail](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
