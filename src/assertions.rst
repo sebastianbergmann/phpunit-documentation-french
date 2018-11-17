@@ -2168,6 +2168,10 @@ Le format de chaine peut contenir les arguments suivants:
 
   ``%c``: Un caractère unique quel qu'il soit.
 
+-
+
+  ``%%``: Le symbole pourcentage : ``%``.
+
 .. _appendixes.assertions.assertStringMatchesFormatFile:
 
 assertStringMatchesFormatFile()
