@@ -39,11 +39,25 @@ dépôt officiel.
 
 ### Générer la documentation HTML
 
-    make html
+Pour générer la documentation, exécuter la ligne de commande suivante:
 
-### Sortie
+```
+$ make html
+```
 
 Ensuite, vous trouverez les fichiers HTML dans `build/html`.
+
+### Relecture automatisée
+
+####  Installation
+```
+$ pip install docutils-ast-writer
+$ npm install
+```
+#### Utilisation
+```
+$ ./node_modules/.bin/textlint src
+```
 
 ## Contribuer
 
