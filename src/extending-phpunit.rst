@@ -288,7 +288,7 @@ et la seconde valeur celle constatée.
                     $result->addError($this, $e, $stopTime);
                 }
 
-                if ($stopTime === null) {
+                finally {
                     $stopTime = PHP_Timer::stop();
                 }
 
