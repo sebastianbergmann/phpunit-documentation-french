@@ -123,7 +123,7 @@ Pour les environments shell Cygwin et/ou MingW32 (ex: TortoiseGit), vous
 passer l'étape 5. ci-dessus, il suffit de sauvegarder le fichier
 :file:`phpunit` (sans l'extension :file:`.phar`),
 et de le rendre exécutable via
-chmod 775 phpunit.
+``chmod 775 phpunit``.
 
 .. _installation.phar.verification:
 
@@ -303,5 +303,3 @@ Les packages optionnels suivants sont disponibles:
     .. code-block:: bash
 
         composer require --dev phpunit/dbunit
-
-

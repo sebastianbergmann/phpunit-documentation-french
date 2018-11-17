@@ -40,7 +40,8 @@ PHPUnit et où vous vous retrouvez bloqué par l'un des problèmes suivants :
 
 L'extension DbUnit simplifie considérablement la configuration d'une base de données à des fins
 de test et vous permet de vérifier le contenu d'une base de données après avoir
-réalisé une suite d'opérations.
+réalisé une suite d'opérations. L'installation de l'extension DbUnit est
+facile et documentée dans :ref:`installation.optional-packages`
 
 .. _database.supported-vendors-for-database-testing:
 
@@ -48,8 +49,8 @@ Systèmes gérés pour tester des bases de données
 ###############################################
 
 DbUnit gère actuellement MySQL, PostgreSQL, Oracle et SQLite. Via
-l'intégration de `Zend Framework <http://framework.zend.com>`_ ou de
-`Doctrine 2 <http://www.doctrine-project.org>`_
+l'intégration de `Zend Framework <https://framework.zend.com>`_ ou de
+`Doctrine 2 <https://www.doctrine-project.org>`_
 il est possible d'accéder à d'autres systèmes de base de données comme IBM DB2 ou
 Microsoft SQL Server.
 
@@ -115,7 +116,7 @@ des tests qui ne font pas appel à une base de données, vous pouvez facilement 
 d'une minute, même pour de grandes séries de tests.
 
 La suite de test du
-`projet Doctrine 2 <http://www.doctrine-project.org>`_, par exemple, possède actuellement une suite de tests d'environ 1000 tests
+`projet Doctrine 2 <https://www.doctrine-project.org>`_, par exemple, possède actuellement une suite de tests d'environ 1000 tests
 dont presque la moitié accède à la base de données et continue à s'exécuter en 15
 secondes sur une base de données MySQL sur un ordinateur de
 bureau standard.
@@ -312,7 +313,7 @@ au test de base de données.
 #.
 
    Si vous utilisez des bibliothèques comme
-   `Doctrine 2 <http://www.doctrine-project.org>`_ ou
+   `Doctrine 2 <https://www.doctrine-project.org>`_ ou
    `Propel <http://www.propelorm.org/>`_
    vous pouvez utiliser leurs APIs pour créer le schéma de base de données dont
    vous avez besoin une fois avant de lancer vos tests. Vous pouvez utiliser les possibilités apportées par
@@ -688,10 +689,10 @@ DataSet XML MySQL
 -----------------
 
 Ce nouveau format XML est spécifique au
-`serveur de bases de données MySQL <http://www.mysql.com>`_.
+`serveur de bases de données MySQL <https://www.mysql.com>`_.
 Sa gestion a été ajoutée dans PHPUnit 3.5. Les fichiers écrits ce format peuvent
 être générés avec l'utilitaire
-`mysqldump <http://dev.mysql.com/doc/refman/5.0/en/mysqldump.html>`_.
+`mysqldump <https://dev.mysql.com/doc/refman/5.0/en/mysqldump.html>`_.
 Contrairement aux datasets CSV, que ``mysqldump``
 gère également, un unique fichier de ce format XML peut contenir des données
 pour de multiples tables. Vous pouvez créer un fichier dans ce format en
@@ -895,7 +896,7 @@ L'implémentation de ce DataSet tableau est simple et
          */
         public function __construct(array $data)
         {
-            foreach ($data AS $tableName => $rows) {
+            foreach ($data as $tableName => $rows) {
                 $columns = [];
                 if (isset($rows[0])) {
                     $columns = array_keys($rows[0]);
@@ -904,7 +905,7 @@ L'implémentation de ce DataSet tableau est simple et
                 $metaData = new DefaultTableMetaData($tableName, $columns);
                 $table = new DefaultTable($metaData);
 
-                foreach ($rows AS $row) {
+                foreach ($rows as $row) {
                     $table->addRow($row);
                 }
                 $this->tables[$tableName] = $table;
@@ -1586,7 +1587,7 @@ Non, PHPUnit exige que tous les objets de base de données soit disponible quand
 la suite démarre. La base de données, les tables, les séquences, les triggers et les
 vues doivent être créés avant que vous exécutiez la suite de tests.
 
-`Doctrine 2 <http://www.doctrine-project.org>`_ ou
+`Doctrine 2 <https://www.doctrine-project.org>`_ ou
 `eZ Components <http://www.ezcomponents.org>`_ possèdent
 des outils puissants qui vous permettent de créer le schéma de base de données
 à partir de structures de données définies préalablement, cependant, ceux-ci

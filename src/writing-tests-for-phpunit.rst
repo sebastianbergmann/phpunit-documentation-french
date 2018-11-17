@@ -600,8 +600,8 @@ Voir :numref:`writing-tests-for-phpunit.data-providers.examples.DependencyAndDat
 
 .. admonition:: Note
 
-   Tous les fournisseurs de données sont exécutés avant le premier appel à la méthode statique ``setUpBeforeClass``
-   et le premier appel à la méthode ``setUp``.
+   Tous les fournisseurs de données sont exécutés avant le premier appel à la méthode statique ``setUpBeforeClass()``
+   et le premier appel à la méthode ``setUp()``.
    De ce fait, vous ne pouvez accéder à aucune variable créée à ces endroits
    depuis un fournisseur de données. Ceci est requis pour que PHPUnit puisse
    calculer le nombre total de tests.
@@ -1016,7 +1016,7 @@ Quand une comparaison échoue, PHPUnit crée une représentation textuelle des
 valeurs d'entrées et les compare. A cause de cette implémentation un diff
 peut montrer plus de problèmes qu'il n'en existe réellement.
 
-Cela arrive seulement lors de l'utilisation de assetEquals ou d'autres fonction
+Cela arrive seulement lors de l'utilisation de ``assertEquals()`` ou d'autres fonctions
 de comparaison "faible" sur les tableaux ou les objets.
 
 .. code-block:: php
