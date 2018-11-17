@@ -34,7 +34,7 @@ de suivre la façon dont PHPUnit implémente ses propres assertions. Comme vous 
 ``assertThat()`` pour évaluation.
 
 .. code-block:: php
-    :caption: Les méthodes assertTrue() et isTrue() de la classe PHPUnit\Framework\Assert
+    :caption: Les méthodes assertTrue() et isTrue() de la classe PHPUnit\\Framework\\Assert
     :name: extending-phpunit.examples.Assert.php
 
     <?php
@@ -80,7 +80,7 @@ abstraite de base pour des objets matcher (ou des contraintes),
 ``PHPUnit\Framework\Constraint``.
 
 .. code-block:: php
-    :caption: La classe PHPUnit_Framework_Constraint_IsTrue
+    :caption: La classe PHPUnit\\Framework\\Constraint\\IsTrue
     :name: extending-phpunit.examples.IsTrue.php
 
     <?php
@@ -223,8 +223,8 @@ des tests.
 
 .. _extending-phpunit.PHPUnit_Framework_Test:
 
-Implémenter PHPUnit\Framework\Test
-##################################
+Implémenter PHPUnit\\Framework\\Test
+####################################
 
 L'interface ``PHPUnit\Framework\Test`` est restreinte et
 facile à implémenter. Vous pouvez écrire une implémentation de
