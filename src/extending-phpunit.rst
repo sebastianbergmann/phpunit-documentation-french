@@ -187,22 +187,24 @@ montre une implémentation simple de l'interface
     }
 
 
-:numref:`extending-phpunit.examples.BaseTestListener.php`
-montre comment étendre la classe abstraite
-``PHPUnit\Framework\BaseTestListener``, qui permet de spécifier uniquement les méthodes d'interface
+:numref:`extending-phpunit.examples.ExtendedTestListener.php`
+montre comment utiliser le trait
+``PHPUnit\Framework\TestListenerDefaultImplementation``, qui permet de spécifier uniquement les méthodes d'interface
 qui sont intéressantes pour votre cas d'utilisation, tout en fournissant des implémentations vides pour
 tous les autres.
 
 .. code-block:: php
-    :caption: Utiliser BaseTestListener
-    :name: extending-phpunit.examples.BaseTestListener.php
+    :caption: Utiliser le trait TestListenerDefaultImplementation
+    :name: extending-phpunit.examples.ExtendedTestListener.php
 
     <?php
-    use PHPUnit\Framework\BaseTestListener;
+    use PHPUnit\Framework\TestListenerDefaultImplementation;
 
-    class ShortTestListener extends BaseTestListener
+    class ShortTestListener
     {
-        public function endTest(PHPUnit\Framework\Test $test, $time)
+        use TestListenerDefaultImplementation;
+
+        public function endTest(PHPUnit\Framework\Test $test, $time): time
         {
             printf("Test '%s' ended.\n", $test->getName());
         }
@@ -315,5 +317,3 @@ et la seconde valeur celle constatée.
 
     FAILURES!
     Tests: 2, Failures: 1.
-
-
