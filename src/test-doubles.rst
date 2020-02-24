@@ -722,8 +722,8 @@ d'invocations.
 .. admonition:: Note
 
    Le paramètre ``$index`` du matcher ``at()``
-   fait référence à l'index, démarrant à zero, dans *toutes les invocations de
-   la méthode* pour un objet mock. Faites preuve de prudence
+   fait référence à l'index, démarrant à zero, de *toutes les invocations de
+   méthodes* pour un objet mock. Faites preuve de prudence
    lors de l'utilisation de ce matcher car cela peut conduire à des tests
    fragiles qui seront trop étroitement liés aux détails d'implémentation spécifiques.
 
