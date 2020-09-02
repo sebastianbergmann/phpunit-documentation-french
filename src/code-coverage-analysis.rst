@@ -38,7 +38,7 @@ des fichiers de log en XML avec les informations de couverture de code dans diff
 en text (et affichées vers STDOUT) et exportées en PHP pour un traitement
 ultérieur.
 
-Reportez-vous à :ref:`textui` pour obtenir la liste des options de ligne de commande
+Reportez-vous au :ref:`textui` pour obtenir la liste des options de ligne de commande
 qui contrôlent la fonctionnalité de couverture de code ainsi que :ref:`appendixes.configuration.logging` pour les paramètres de
 configuration appropriés.
 
