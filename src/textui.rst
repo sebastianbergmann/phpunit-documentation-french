@@ -3,7 +3,7 @@
 .. _textui:
 
 =========================================
-Le lanceur de tests en ligne de commandes
+Lanceur de tests en ligne de commandes
 =========================================
 
 Le lanceur de tests en ligne de commandes de PHPUnit peut être appelé via
