@@ -120,7 +120,7 @@ L'installation globale du PHAR implique la même procédure que l'installation
        PHPUnit x.y.z by Sebastian Bergmann and contributors.
 
 Pour les environments shell Cygwin et/ou MingW32 (ex: TortoiseGit), vous
-passer l'étape 5. ci-dessus, il suffit de sauvegarder le fichier
+passez l'étape 5. ci-dessus, il suffit de sauvegarder le fichier
 :file:`phpunit` (sans l'extension :file:`.phar`),
 et de le rendre exécutable via
 ``chmod 775 phpunit``.
