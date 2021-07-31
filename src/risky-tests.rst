@@ -21,8 +21,7 @@ de la ligne de commande ou en définissant
 le fichier de configuration XML de PHPUnit.
 
 Un test qui n'effectue pas d'assertion sera marqué comme risqué
-lorsque cette vérification est activée. Les attentes sur les objets bouchonnés ou les annotations
-telles que @expectedException comptent comme une assertion.
+lorsque cette vérification est activée. Les attentes sur les objets bouchonnés comptent comme une assertion.
 
 .. _risky-tests.unintentionally-covered-code:
 
