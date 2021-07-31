@@ -659,50 +659,6 @@ des attentes pour les exceptions levées par le code testé.
    contient le message ``$expected`` et n'effectue pas
    une comparaison exacte de chaîne.
 
-Alternativement, vous pouvez utiliser les annotations ``@expectedException``,
-``@expectedExceptionCode``,
-``@expectedExceptionMessage`` et
-``@expectedExceptionMessageRegExp`` pour établir
-des attentes pour les exceptions levées par le code testé.
-:numref:`writing-tests-for-phpunit.exceptions.examples.ExceptionTest2.php`
-montre un exemple.
-
-.. code-block:: php
-    :caption: Utiliser l'annotation @expectedException
-    :name: writing-tests-for-phpunit.exceptions.examples.ExceptionTest2.php
-
-    <?php
-    use PHPUnit\Framework\TestCase;
-
-    class ExceptionTest extends TestCase
-    {
-        /**
-         * @expectedException InvalidArgumentException
-         */
-        public function testException()
-        {
-        }
-    }
-
-.. code-block:: bash
-
-    $ phpunit ExceptionTest
-    PHPUnit |version|.0 by Sebastian Bergmann and contributors.
-
-    F
-
-    Time: 0 seconds, Memory: 4.75Mb
-
-    There was 1 failure:
-
-    1) ExceptionTest::testException
-    Failed asserting that exception of type "InvalidArgumentException" is thrown.
-
-    FAILURES!
-    Tests: 1, Assertions: 1, Failures: 1.
-
-.. _writing-tests-for-phpunit.errors:
-
 Tester les erreurs PHP
 ######################
 
@@ -727,11 +683,9 @@ PHP comme montré dans :numref:`writing-tests-for-phpunit.exceptions.examples.Er
 
     class ExpectedErrorTest extends TestCase
     {
-        /**
-         * @expectedException PHPUnit\Framework\Error\Error
-         */
         public function testFailingInclude()
         {
+            $this->expectException(PHPUnit\Framework\Error\Error::class);
             include 'not_existing_file.php';
         }
     }
@@ -756,8 +710,7 @@ les remarques et les avertissements PHP.
    Vous devriez être aussi précis que possible lorsque vous testez des exceptions.
    Tester avec des classes qui sont trop génériques peut conduire à des effets de
    bord indésirables. C'est pourquoi tester la présence de la classe
-   ``Exception`` avec ``@expectedException`` ou
-   ``expectException()`` n'est plus autorisé.
+   ``Exception`` avec ``expectException()`` n'est plus autorisé.
 
 Quand les tests s'appuient sur des fonctions PHP qui déclenchent des erreurs
 comme ``fopen``, il peut parfois être utile d'utiliser la
