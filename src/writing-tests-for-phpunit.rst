@@ -659,6 +659,8 @@ des attentes pour les exceptions levées par le code testé.
    contient le message ``$expected`` et n'effectue pas
    une comparaison exacte de chaîne.
 
+.. _writing-tests-for-phpunit.errors:
+
 Tester les erreurs PHP
 ######################
 
@@ -675,7 +677,7 @@ PHP comme montré dans :numref:`writing-tests-for-phpunit.exceptions.examples.Er
    pour supprimer le type d'erreurs que vous testez.
 
 .. code-block:: php
-    :caption: Attendre une erreur PHP en utilisant @expectedException
+    :caption: Attendre une erreur PHP en utilisant expectedException
     :name: writing-tests-for-phpunit.exceptions.examples.ErrorTest.php
 
     <?php
