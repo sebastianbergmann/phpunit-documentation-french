@@ -234,7 +234,7 @@ une nouvelle pour chaque test. Ceci rend vos tests plus rapides.
 utilise les méthodes template ``setUpBeforeClass()`` et
 ``tearDownAfterClass()`` pour respectivement établir la connexion à la
 base de données avant le premier test de la classe de cas de test et pour
-de déconnecter de la base de données après le dernier test du cas de test.
+se déconnecter de la base de données après le dernier test du cas de test.
 
 .. code-block:: php
     :caption: Partager les fixtures entre les tests d'une série de tests
