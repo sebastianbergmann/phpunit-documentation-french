@@ -604,7 +604,7 @@ méthode mockée, comme avec ``with()``.
 
 La contrainte ``callback()`` peut être utilisée pour une vérification
 plus complexe d'un argument. Cette contrainte prend comme seul paramètre une fonction de
-rappel PHP (callback). La fonctione de rappel PHP recevra l'argument à vérifier comme son seul
+rappel PHP (callback). La fonction de rappel PHP recevra l'argument à vérifier comme son seul
 paramètre et devrait renvoyer ``true`` si l'argument
 passe la vérification et ``false`` sinon.
 
